@@ -21,11 +21,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 
 /* 배경 스크린샷 슬라이드 */
 .slide-bg { background-size: cover; background-position: center top; background-repeat: no-repeat; }
-.slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.35); z-index: 1; }
-.slide-bg > * { position: relative; z-index: 2; }
+.slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.55); z-index: 1; }
+.slide-bg > * { position: relative; z-index: 2; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
 
 /* 글래스모피즘 패널 */
-.glass { background: rgba(10, 14, 23, 0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
+.glass { background: rgba(10, 14, 23, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
 .glass-bottom { position: absolute; bottom: 40px; left: 60px; right: 60px; z-index: 2; }
 .glass-left { position: absolute; left: 40px; top: 50%; transform: translateY(-50%); max-width: 460px; z-index: 2; }
 .glass-right { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); max-width: 460px; z-index: 2; }
@@ -173,7 +173,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ============================================================ -->
 
 <!-- S01: 타이틀 -->
-<div class="slide" id="s1">
+<div class="slide slide-bg" id="s1" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div class="title-huge" style="font-size:120px; letter-spacing: 12px;">METADESK</div>
   <div class="body-big mt-32" style="font-size:28px; color:#8090a8;">정치/선거 SNS 실시간 수집·분석·관제 AI 대시보드</div>
   <div class="body-sm mt-24" style="font-size:22px;">MBC충북 사내 보고회 · 2026.03</div>
@@ -194,28 +194,28 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S03: 문제점 ① -->
-<div class="slide" id="s3">
+<div class="slide slide-bg" id="s3" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&q=80');">
   <div class="body-sm mb-16">PROBLEM 01</div>
   <div class="title-big red" style="font-size:56px;">기자가 5개 앱을<br>일일이 열어 확인합니다</div>
   <div class="body-big mt-32">YouTube, Twitter, Instagram, Facebook, TikTok…<br>매일 수십 번 반복</div>
 </div>
 
 <!-- S04: 문제점 ② -->
-<div class="slide" id="s4">
+<div class="slide slide-bg" id="s4" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1920&q=80');">
   <div class="body-sm mb-16">PROBLEM 02</div>
   <div class="title-big red" style="font-size:56px;">라이브 시작을<br>평균 15~30분 뒤에<br>알게 됩니다</div>
   <div class="body-big mt-32">정치인 긴급 라이브 — 뒤늦은 인지 → 뒤늦은 보도</div>
 </div>
 
 <!-- S05: 문제점 ③ -->
-<div class="slide" id="s5">
+<div class="slide slide-bg" id="s5" style="background-image:url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1920&q=80');">
   <div class="body-sm mb-16">PROBLEM 03</div>
   <div class="title-big red" style="font-size:56px;">댓글 분위기를<br>감에 의존합니다</div>
   <div class="body-big mt-32">수천 개 댓글을 사람이 읽을 수 없음<br>→ "분위기가 좋은 것 같다" 수준의 판단</div>
 </div>
 
 <!-- S06: 한 줄 정의 -->
-<div class="slide" id="s6">
+<div class="slide slide-bg" id="s6" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80');">
   <div class="body-sm mb-16">한 줄 정의</div>
   <div class="title-huge" style="font-size:56px; line-height:1.4;">정치/선거 SNS를<br>실시간 수집·분석·관제하는<br>AI 대시보드</div>
 </div>
@@ -333,14 +333,14 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ============================================================ -->
 
 <!-- S13: 제목 -->
-<div class="slide" id="s13">
+<div class="slide slide-bg" id="s13" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div style="font-size:72px;">📰</div>
   <div class="title-huge mt-24" style="font-size:64px;">기자의 하루</div>
   <div class="body-big mt-16">메타데스크와 함께하는 하루를 따라가 봅니다</div>
 </div>
 
 <!-- S14: 07:00 모닝 브리핑 -->
-<div class="slide" id="s14">
+<div class="slide slide-bg" id="s14" style="background-image:url('https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1920&q=80');">
   <div class="scenario">
     <div class="sc-time accent">🌅 07:00</div>
     <div class="sc-title">출근 — 모닝 브리핑 확인</div>
@@ -357,7 +357,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S15: 09:00 오전 취재 -->
-<div class="slide" id="s15">
+<div class="slide slide-bg" id="s15" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div class="scenario">
     <div class="sc-time accent">🏢 09:00</div>
     <div class="sc-title">오전 취재 — 실시간 피드 + 급상승 감지</div>
@@ -375,7 +375,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S16: 14:00 라이브 감지 -->
-<div class="slide" id="s16">
+<div class="slide slide-bg" id="s16" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1920&q=80');">
   <div class="scenario scenario-red">
     <div class="sc-time" style="color:#ff3355;">🔴 14:00</div>
     <div class="sc-title">오후 — 라이브 감지 + 즉시 대응</div>
@@ -392,7 +392,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S17: 18:00 마감 -->
-<div class="slide" id="s17">
+<div class="slide slide-bg" id="s17" style="background-image:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&q=80');">
   <div class="scenario">
     <div class="sc-time accent">🌙 18:00</div>
     <div class="sc-title">마감 — 통계 + 내일 준비</div>
@@ -770,14 +770,14 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ============================================================ -->
 
 <!-- S43: 제목 -->
-<div class="slide" id="s43">
+<div class="slide slide-bg" id="s43" style="background-image:url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1920&q=80');">
   <div style="font-size:72px;">🚨</div>
   <div class="title-huge mt-24" style="font-size:56px;">긴급 상황에서<br>메타데스크는</div>
   <div class="body-big mt-16">실제 일어날 수 있는 3가지 상황</div>
 </div>
 
 <!-- S44: 시나리오 ① 돌발 라이브 -->
-<div class="slide" id="s44">
+<div class="slide slide-bg" id="s44" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1920&q=80');">
   <div class="emergency">
     <div class="em-title">🔴 시나리오 ① — 정치인 돌발 라이브</div>
     <div class="em-body">
@@ -805,7 +805,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S45: 시나리오 ② 여론 급변 -->
-<div class="slide" id="s45">
+<div class="slide slide-bg" id="s45" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&q=80');">
   <div class="emergency">
     <div class="em-title">📊 시나리오 ② — 여론 급변 (댓글 폭주)</div>
     <div class="em-body">
@@ -832,7 +832,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S46: 시나리오 ③ 선거일 보도 -->
-<div class="slide" id="s46">
+<div class="slide slide-bg" id="s46" style="background-image:url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=1920&q=80');">
   <div class="emergency">
     <div class="em-title">🗳️ 시나리오 ③ — 선거일 보도</div>
     <div class="em-body">
@@ -917,7 +917,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ============================================================ -->
 
 <!-- S50: 제목 -->
-<div class="slide" id="s50">
+<div class="slide slide-bg" id="s50" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80');">
   <div style="font-size:72px;">📈</div>
   <div class="title-huge mt-24" style="font-size:72px;">도입 효과</div>
 </div>
@@ -1039,7 +1039,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S57: 비용 효과 -->
-<div class="slide" id="s57">
+<div class="slide slide-bg" id="s57" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1920&q=80');">
   <div class="title-med mb-24">비용 효과</div>
   <div class="cards">
     <div class="card card-lg" style="text-align:center;">
@@ -1065,7 +1065,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ============================================================ -->
 
 <!-- S58: 제목 -->
-<div class="slide" id="s58">
+<div class="slide slide-bg" id="s58" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80');">
   <div style="font-size:72px;">🗓️</div>
   <div class="title-huge mt-24" style="font-size:72px;">향후 계획</div>
 </div>
@@ -1113,7 +1113,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S62: 장기 비전 -->
-<div class="slide" id="s62">
+<div class="slide slide-bg" id="s62" style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&q=80');">
   <div class="body-sm mb-16">LONG-TERM VISION</div>
   <div class="title-huge" style="font-size:56px; line-height:1.4;">AI 뉴스룸</div>
   <div class="body-big mt-32" style="max-width:800px;">
@@ -1241,7 +1241,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S71: 엔딩 -->
-<div class="slide" id="s71">
+<div class="slide slide-bg" id="s71" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div class="title-huge" style="font-size:96px; letter-spacing: 8px;">METADESK</div>
   <div class="body-big mt-32" style="font-size:24px; color:#8090a8;">라이브 데모</div>
   <div class="mt-16" style="background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); border-radius:12px; padding:20px 48px; display:inline-block;">
