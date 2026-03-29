@@ -53,9 +53,10 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 
 /* Screenshot slides */
 .ss-layout { display: flex; align-items: center; gap: 48px; width: 100%; max-width: 1400px; }
-.ss-layout img { border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); max-height: 70vh; max-width: 65%; object-fit: contain; }
+.ss-layout img { border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); max-height: 70vh; max-width: 55%; object-fit: contain; }
 .ss-layout .ss-text { text-align: left; flex: 1; }
-.ss-full img { max-width: 85%; max-height: 75vh; }
+.ss-full { text-align: center; }
+.ss-full img { max-width: 85%; max-height: 75vh; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); object-fit: contain; }
 
 /* Badge */
 .badge { display: inline-block; padding: 4px 16px; border-radius: 20px; font-size: 18px; font-weight: 700; }
@@ -80,7 +81,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .agenda-num { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #00ff88, #00aaff); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; color: #0a0e17; flex-shrink: 0; }
 
 /* Arrow visual */
-.arrow-row { display: flex; align-items: center; gap: 24px; font-size: 48px; font-weight: 700; }
+.arrow-row { display: flex; align-items: center; gap: 24px; font-size: 48px; font-weight: 700; justify-content: center; }
 .arrow-row .arr { font-size: 64px; color: #00ff88; }
 
 /* Comparison table */
@@ -117,6 +118,37 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .timeline { text-align: left; max-width: 800px; }
 .tl-item { padding: 12px 0; font-size: 28px; display: flex; gap: 16px; align-items: flex-start; }
 .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: #00ff88; margin-top: 12px; flex-shrink: 0; }
+
+/* Scenario cards */
+.scenario { background: rgba(255,255,255,0.03); border-left: 4px solid #00ff88; border-radius: 0 16px 16px 0; padding: 40px 48px; max-width: 1000px; text-align: left; }
+.scenario.scenario-red { border-left-color: #ff3355; }
+.scenario .sc-time { font-size: 48px; font-weight: 900; margin-bottom: 8px; }
+.scenario .sc-title { font-size: 32px; font-weight: 700; color: #e0e6f0; margin-bottom: 16px; }
+.scenario .sc-body { font-size: 24px; color: #b0b8c8; line-height: 1.7; }
+.scenario .sc-compare { margin-top: 20px; font-size: 24px; }
+.scenario .sc-compare .sc-old { color: #ff3355; }
+.scenario .sc-compare .sc-new { color: #00ff88; }
+
+/* Emergency scenario */
+.emergency { background: rgba(255,51,85,0.04); border: 1px solid rgba(255,51,85,0.2); border-radius: 16px; padding: 48px; max-width: 1000px; text-align: left; }
+.emergency .em-title { font-size: 32px; font-weight: 700; color: #ff3355; margin-bottom: 16px; }
+.emergency .em-body { font-size: 22px; color: #b0b8c8; line-height: 1.8; }
+.emergency .em-step { display: flex; gap: 12px; align-items: flex-start; margin-top: 12px; }
+.emergency .em-label { font-weight: 700; color: #ffaa00; white-space: nowrap; min-width: 100px; }
+
+/* Effect number */
+.effect-num { font-size: 120px; font-weight: 900; line-height: 1; }
+.effect-desc { font-size: 28px; color: #b0b8c8; margin-top: 16px; line-height: 1.6; }
+.effect-detail { font-size: 22px; color: #8090a8; margin-top: 12px; line-height: 1.5; }
+
+/* Roadmap */
+.road-card { background: rgba(255,255,255,0.04); border-radius: 16px; padding: 40px; max-width: 900px; text-align: left; width: 100%; }
+.road-badge { font-size: 18px; font-weight: 700; padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+
+/* Election timeline */
+.election-tl { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+.election-tl .etl { background: rgba(255,255,255,0.04); border-radius: 16px; padding: 32px 28px; flex: 1; min-width: 260px; max-width: 340px; text-align: center; }
+.election-tl .etl-day { font-size: 36px; font-weight: 900; margin-bottom: 8px; }
 </style>
 </head>
 <body>
@@ -127,70 +159,71 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- PART 1: 도입 (S01-S07)                                        -->
 <!-- ============================================================ -->
 
-<!-- S01 -->
+<!-- S01: 타이틀 -->
 <div class="slide" id="s1">
   <div class="title-huge" style="font-size:120px; letter-spacing: 12px;">METADESK</div>
   <div class="body-big mt-32" style="font-size:28px; color:#8090a8;">정치/선거 SNS 실시간 수집·분석·관제 AI 대시보드</div>
   <div class="body-sm mt-24" style="font-size:22px;">MBC충북 사내 보고회 · 2026.03</div>
 </div>
 
-<!-- S02 -->
+<!-- S02: 아젠다 -->
 <div class="slide" id="s2">
   <div class="title-med mb-24">오늘 보여드릴 것</div>
-  <div style="text-align:left; max-width:700px;">
+  <div style="text-align:left; max-width:750px;">
     <div class="agenda-item"><div class="agenda-num">1</div><span>왜 만들었는가 — 문제 정의</span></div>
     <div class="agenda-item"><div class="agenda-num">2</div><span>시스템 현황 — 숫자로 보기</span></div>
-    <div class="agenda-item"><div class="agenda-num">3</div><span>핵심 화면 데모</span></div>
-    <div class="agenda-item"><div class="agenda-num">4</div><span>구현 현황 — 완료 / 진행중 / 보완</span></div>
-    <div class="agenda-item"><div class="agenda-num">5</div><span>도입 효과</span></div>
-    <div class="agenda-item"><div class="agenda-num">6</div><span>향후 계획 + 요청</span></div>
+    <div class="agenda-item"><div class="agenda-num">3</div><span>기자의 하루 — 시나리오</span></div>
+    <div class="agenda-item"><div class="agenda-num">4</div><span>핵심 화면 데모</span></div>
+    <div class="agenda-item"><div class="agenda-num">5</div><span>긴급 상황 시나리오</span></div>
+    <div class="agenda-item"><div class="agenda-num">6</div><span>도입 효과 + 비교</span></div>
+    <div class="agenda-item"><div class="agenda-num">7</div><span>향후 계획 + 요청</span></div>
   </div>
 </div>
 
-<!-- S03 -->
+<!-- S03: 문제점 ① -->
 <div class="slide" id="s3">
   <div class="body-sm mb-16">PROBLEM 01</div>
   <div class="title-big red" style="font-size:56px;">기자가 5개 앱을<br>일일이 열어 확인합니다</div>
   <div class="body-big mt-32">YouTube, Twitter, Instagram, Facebook, TikTok…<br>매일 수십 번 반복</div>
 </div>
 
-<!-- S04 -->
+<!-- S04: 문제점 ② -->
 <div class="slide" id="s4">
   <div class="body-sm mb-16">PROBLEM 02</div>
   <div class="title-big red" style="font-size:56px;">라이브 시작을<br>평균 15~30분 뒤에<br>알게 됩니다</div>
   <div class="body-big mt-32">정치인 긴급 라이브 — 뒤늦은 인지 → 뒤늦은 보도</div>
 </div>
 
-<!-- S05 -->
+<!-- S05: 문제점 ③ -->
 <div class="slide" id="s5">
   <div class="body-sm mb-16">PROBLEM 03</div>
   <div class="title-big red" style="font-size:56px;">댓글 분위기를<br>감에 의존합니다</div>
   <div class="body-big mt-32">수천 개 댓글을 사람이 읽을 수 없음<br>→ "분위기가 좋은 것 같다" 수준의 판단</div>
 </div>
 
-<!-- S06 -->
+<!-- S06: 한 줄 정의 -->
 <div class="slide" id="s6">
   <div class="body-sm mb-16">한 줄 정의</div>
   <div class="title-huge" style="font-size:56px; line-height:1.4;">정치/선거 SNS를<br>실시간 수집·분석·관제하는<br>AI 대시보드</div>
 </div>
 
-<!-- S07 -->
+<!-- S07: 핵심 가치 3가지 -->
 <div class="slide" id="s7">
   <div class="title-med mb-24">핵심 가치</div>
   <div class="cards">
     <div class="card card-lg" style="text-align:center;">
       <div style="font-size:56px;">⚡</div>
-      <div class="title-med mt-16 accent">Speed</div>
+      <div class="title-med mt-16 accent">속도</div>
       <div class="body-med mt-16">라이브 감지 1분 이내<br>새 게시물 3초 이내 반영</div>
     </div>
     <div class="card card-lg" style="text-align:center;">
       <div style="font-size:56px;">📊</div>
-      <div class="title-med mt-16 accent">Data</div>
-      <div class="body-med mt-16">HOT SCORE 알고리즘<br>AI 감성분석으로 정량화</div>
+      <div class="title-med mt-16 accent">정확</div>
+      <div class="body-med mt-16">HOT SCORE 자동 분석<br>AI 감성분석으로 정량화</div>
     </div>
     <div class="card card-lg" style="text-align:center;">
       <div style="font-size:56px;">🏢</div>
-      <div class="title-med mt-16 accent">Newsroom</div>
+      <div class="title-med mt-16 accent">현장성</div>
       <div class="body-med mt-16">TV 모드, 관제 대시보드<br>보도국에 바로 적용 가능</div>
     </div>
   </div>
@@ -200,18 +233,18 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- PART 2: 시스템 현황 (S08-S12)                                  -->
 <!-- ============================================================ -->
 
-<!-- S08 -->
+<!-- S08: 숫자 4개 카드 -->
 <div class="slide" id="s8">
   <div class="title-med mb-24">시스템 현황</div>
   <div class="cards">
     <div class="card"><div class="num accent">144</div><div class="label">모니터링 인물</div></div>
     <div class="card"><div class="num accent">172</div><div class="label">수집 계정</div></div>
-    <div class="card"><div class="num accent">2,192</div><div class="label">수집 인텔</div></div>
-    <div class="card"><div class="num accent">10+</div><div class="label">동시 라이브</div></div>
+    <div class="card"><div class="num accent">2,192</div><div class="label">수집된 게시물</div></div>
+    <div class="card"><div class="num accent">10+</div><div class="label">동시 라이브 관제</div></div>
   </div>
 </div>
 
-<!-- S09 -->
+<!-- S09: 수집 플랫폼 -->
 <div class="slide" id="s9">
   <div class="title-med mb-24">수집 플랫폼</div>
   <div class="plat-row">
@@ -223,7 +256,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   </div>
 </div>
 
-<!-- S10 -->
+<!-- S10: 자동화 7가지 -->
 <div class="slide" id="s10">
   <div class="title-med mb-24">자동화 7가지</div>
   <table class="tbl">
@@ -238,7 +271,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   </table>
 </div>
 
-<!-- S11 -->
+<!-- S11: AI 기능 3가지 -->
 <div class="slide" id="s11">
   <div class="title-med mb-24">AI 기능</div>
   <div class="cards">
@@ -250,7 +283,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
     <div class="card card-lg" style="text-align:center;">
       <div style="font-size:48px;">📈</div>
       <div style="font-size:32px; font-weight:700; margin-top:16px;">급상승 탐지</div>
-      <div class="body-med mt-16">HOT SCORE 급등 시<br>자동 알림 트리거</div>
+      <div class="body-med mt-16">HOT SCORE 급등 시<br>자동 알림</div>
     </div>
     <div class="card card-lg" style="text-align:center;">
       <div style="font-size:48px;">☀️</div>
@@ -260,7 +293,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   </div>
 </div>
 
-<!-- S12 -->
+<!-- S12: 누가 쓰는가? -->
 <div class="slide" id="s12">
   <div class="title-med mb-24">누가 쓰는가?</div>
   <div class="roles">
@@ -283,642 +316,995 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- ============================================================ -->
-<!-- PART 3: 핵심 화면 데모 (S13-S37)                              -->
+<!-- PART 3: 기자의 하루 시나리오 (S13-S17) [NEW]                    -->
 <!-- ============================================================ -->
 
-<!-- 메인 대시보드 -->
-<!-- S13 -->
+<!-- S13: 제목 -->
 <div class="slide" id="s13">
+  <div style="font-size:72px;">📰</div>
+  <div class="title-huge mt-24" style="font-size:64px;">기자의 하루</div>
+  <div class="body-big mt-16">메타데스크와 함께하는 하루를 따라가 봅니다</div>
+</div>
+
+<!-- S14: 07:00 모닝 브리핑 -->
+<div class="slide" id="s14">
+  <div class="scenario">
+    <div class="sc-time accent">🌅 07:00</div>
+    <div class="sc-title">출근 — 모닝 브리핑 확인</div>
+    <div class="sc-body">
+      출근하면 가장 먼저 <strong style="color:#00ff88;">모닝 브리핑</strong>을 엽니다.<br><br>
+      어젯밤 HOT 게시물 TOP5, 정당별 활동량,<br>
+      이슈 요약이 자동으로 정리되어 있습니다.
+    </div>
+    <div class="sc-compare mt-24">
+      <span class="sc-old">이전: 인턴이 30분간 수동 정리</span><br>
+      <span class="sc-new">→ 지금: AI가 자동 생성</span>
+    </div>
+  </div>
+</div>
+
+<!-- S15: 09:00 오전 취재 -->
+<div class="slide" id="s15">
+  <div class="scenario">
+    <div class="sc-time accent">🏢 09:00</div>
+    <div class="sc-title">오전 취재 — 실시간 피드 + 급상승 감지</div>
+    <div class="sc-body">
+      오전 회의 전 <strong style="color:#00ff88;">실시간 피드</strong>를 확인합니다.<br><br>
+      PRIORITY TARGETS에 급상승 게시물이 떠오르면<br>
+      → <strong style="color:#e0e6f0;">'이건 오늘 기사감이다'</strong> 판단.<br><br>
+      HOT SCORE가 높은 게시물부터 취재 우선순위를 정합니다.
+    </div>
+    <div class="sc-compare mt-24">
+      <span class="sc-old">이전: 감에 의존</span><br>
+      <span class="sc-new">→ 지금: 점수 기반 객관적 판단</span>
+    </div>
+  </div>
+</div>
+
+<!-- S16: 14:00 라이브 감지 -->
+<div class="slide" id="s16">
+  <div class="scenario scenario-red">
+    <div class="sc-time" style="color:#ff3355;">🔴 14:00</div>
+    <div class="sc-title">오후 — 라이브 감지 + 즉시 대응</div>
+    <div class="sc-body">
+      정치인이 갑자기 <strong style="color:#ff3355;">라이브</strong>를 시작합니다.<br><br>
+      메타데스크가 <strong style="color:#00ff88;">1분 이내에 감지</strong> → 화면에 알림 + 소리.<br>
+      편성PD가 라이브 관제 화면에서 즉시 확인 → 특보 편성 결정.
+    </div>
+    <div class="sc-compare mt-24">
+      <span class="sc-old">이전: 동료 전화로 15분 뒤 인지</span><br>
+      <span class="sc-new">→ 지금: 1분 이내 자동 알림</span>
+    </div>
+  </div>
+</div>
+
+<!-- S17: 18:00 마감 -->
+<div class="slide" id="s17">
+  <div class="scenario">
+    <div class="sc-time accent">🌙 18:00</div>
+    <div class="sc-title">마감 — 통계 + 내일 준비</div>
+    <div class="sc-body">
+      오늘 하루 수집된 게시물 통계를 확인합니다.<br><br>
+      정당별 활동량, 트렌드 변화를 <strong style="color:#00ff88;">데이터로</strong> 확인.<br>
+      내일 취재 방향을 정합니다.<br><br>
+      <span style="color:#8090a8;">TV 모드는 야간에도 편성국 벽면에서 계속 돌아갑니다.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 4: 핵심 화면 데모 (S18-S42)                               -->
+<!-- ============================================================ -->
+
+<!-- ─── 메인 대시보드 (4장) ─── -->
+
+<!-- S18: 스크린샷 전체 -->
+<div class="slide" id="s18">
   <div class="title-med mb-24">메인 대시보드</div>
-  <div class="ss-full" style="text-align:center;">
+  <div class="ss-full">
     <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
   </div>
 </div>
 
-<!-- S14 -->
-<div class="slide" id="s14">
+<!-- S19: DAILY BRIEFING -->
+<div class="slide" id="s19">
   <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드" style="max-width:50%; max-height:60vh;">
+    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
     <div class="ss-text">
-      <div class="body-sm mb-16">메인 대시보드</div>
-      <div class="title-med" style="text-align:left;">DAILY BRIEFING</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:28px;">AI가 매일 아침<br>자동 생성하는<br><span class="accent" style="font-size:36px; font-weight:700;">24시간 요약</span></div>
-      <div class="body-med mt-24" style="text-align:left;">주요 이슈, HOT 게시물, 감성 트렌드를<br>한 눈에 파악</div>
+      <div class="badge badge-green mb-16">DAILY BRIEFING</div>
+      <div class="title-med" style="font-size:36px;">매일 아침 AI가<br>자동으로 만들어줍니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        어제 밤사이 무슨 일이 있었는지 <strong style="color:#e0e6f0;">3줄로 요약.</strong><br><br>
+        HOT 게시물 5개를 자동 선정.<br><br>
+        기자가 출근 전에 이미 파악 완료.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- S15 -->
-<div class="slide" id="s15">
+<!-- S20: PRIORITY TARGETS -->
+<div class="slide" id="s20">
   <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드" style="max-width:50%; max-height:60vh;">
+    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
     <div class="ss-text">
-      <div class="body-sm mb-16">메인 대시보드</div>
-      <div class="title-med" style="text-align:left;">PRIORITY TARGETS</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:28px;">반응 점수(SCORE) 기반<br><span class="accent" style="font-size:36px; font-weight:700;">실시간 랭킹</span></div>
-      <div class="body-med mt-24" style="text-align:left;">누가 지금 가장 화제인지<br>숫자로 즉시 확인</div>
+      <div class="badge badge-green mb-16">PRIORITY TARGETS</div>
+      <div class="title-med" style="font-size:36px;">지금 가장 화제인 정치인이<br>누구인지, 숫자로 보여줍니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        이재명 <strong style="color:#00ff88;">1.1K</strong> / 한동훈 <strong style="color:#00ff88;">1.6K</strong><br>
+        — 실시간 반응 점수.<br><br>
+        <span style="color:#ff3355;">'저 사람 요즘 뜬다'</span>가 아니라<br>
+        <span style="color:#00ff88;">'저 사람 SCORE 5,900'</span>으로.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- S16 -->
-<div class="slide" id="s16">
+<!-- S21: BREAKING TICKER -->
+<div class="slide" id="s21">
   <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드" style="max-width:50%; max-height:60vh;">
+    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
     <div class="ss-text">
-      <div class="body-sm mb-16">메인 대시보드</div>
-      <div class="title-med" style="text-align:left; font-size:40px;">BREAKING TICKER<br>+ 정당 필터</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:28px;"><span class="accent" style="font-size:36px; font-weight:700;">방송국 관제 컨셉</span></div>
-      <div class="body-med mt-24" style="text-align:left;">실시간 속보 티커 +<br>정당별 필터링으로<br>관심 진영만 집중 모니터링</div>
+      <div class="badge badge-green mb-16">BREAKING TICKER + 정당 필터</div>
+      <div class="title-med" style="font-size:36px;">속보 자막처럼<br>흘러갑니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        하단에 최신 게시물이<br>
+        방송국 속보 자막처럼 흘러갑니다.<br><br>
+        <strong style="color:#e0e6f0;">민주당 / 국힘 / 혁신당</strong><br>
+        버튼 하나로 관심 정당만 필터링.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- 라이브 관제 -->
-<!-- S17 -->
-<div class="slide" id="s17">
+<!-- ─── 라이브 관제 (5장) ─── -->
+
+<!-- S22: 스크린샷 전체 -->
+<div class="slide" id="s22">
   <div class="title-med mb-24">라이브 관제</div>
-  <div class="ss-full" style="text-align:center;">
+  <div class="ss-full">
     <img src="screenshots/03-live-tv.png" alt="라이브 관제">
   </div>
 </div>
 
-<!-- S18 -->
-<div class="slide" id="s18">
-  <div class="body-sm mb-16">라이브 관제</div>
-  <div class="title-big red" style="font-size:64px;">지금 LIVE 10개가<br>동시에 돌아가고 있습니다</div>
-  <div class="body-big mt-32">정치인 유튜브 라이브를 한 화면에서<br>실시간 모니터링</div>
+<!-- S23: 동시 라이브 -->
+<div class="slide" id="s23">
+  <div class="body-sm mb-16">LIVE MONITOR</div>
+  <div class="title-big" style="font-size:64px;">지금 <span class="red">LIVE 10개</span>가<br>동시에 돌아가고 있습니다</div>
+  <div class="body-big mt-32">모든 정치인의 라이브를 한 화면에서 관제</div>
 </div>
 
-<!-- S19 -->
-<div class="slide" id="s19">
-  <div class="body-sm mb-16">라이브 관제</div>
-  <div class="title-med mb-24">3중 감지 시스템</div>
-  <div class="cards" style="max-width:1000px;">
-    <div class="card" style="text-align:center;">
-      <div style="font-size:40px;">🔔</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">YouTube 자동 알림</div>
-      <div class="body-med mt-16">YouTube가 직접 알림<br>→ 즉시 감지</div>
+<!-- S24: 3중 감지 -->
+<div class="slide" id="s24">
+  <div class="title-med mb-24">3중 감지 — 절대 놓치지 않습니다</div>
+  <div class="cards">
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">📡</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">자동 알림</div>
+      <div class="body-med mt-16">YouTube가 직접 알려줍니다</div>
     </div>
-    <div class="card" style="text-align:center;">
-      <div style="font-size:40px;">📡</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">피드 정기 확인</div>
-      <div class="body-med mt-16">피드 주기적 확인<br>→ 백업 감지</div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🔄</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">주기적 확인</div>
+      <div class="body-med mt-16">놓친 것이 없는지<br>주기적으로 확인합니다</div>
     </div>
-    <div class="card" style="text-align:center;">
-      <div style="font-size:40px;">🔄</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">1분마다 확인</div>
-      <div class="body-med mt-16">API 직접 조회<br>→ 최종 안전망</div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🔍</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">1분마다 재확인</div>
+      <div class="body-med mt-16">마지막 안전장치로<br>1분마다 재확인합니다</div>
     </div>
   </div>
 </div>
 
-<!-- S20 -->
-<div class="slide" id="s20">
+<!-- S25: 방송 예정 + 알림 -->
+<div class="slide" id="s25">
   <div class="ss-layout">
-    <img src="screenshots/03-live-tv.png" alt="라이브 관제" style="max-width:50%; max-height:60vh;">
+    <img src="screenshots/03-live-tv.png" alt="라이브 관제">
     <div class="ss-text">
-      <div class="body-sm mb-16">라이브 관제</div>
-      <div class="title-med" style="text-align:left; font-size:40px;">방송 예정 사이드바<br>+ 알림 사운드</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:28px;">예정된 라이브 목록을<br>사이드바에서 확인</div>
-      <div class="body-med mt-24" style="text-align:left;">새 라이브 시작 시<br>🔊 사운드 알림으로 즉시 인지</div>
+      <div class="badge badge-green mb-16">방송 예정 + 알림</div>
+      <div class="title-med" style="font-size:36px;">곧 시작할 라이브 목록이<br>오른쪽에 뜹니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        새 라이브가 시작되면<br>
+        <strong style="color:#ff3355;">소리로 알림.</strong><br><br>
+        PD가 다른 일 하다가도<br>
+        바로 알 수 있습니다.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- S21 -->
-<div class="slide" id="s21">
-  <div style="font-size:80px; margin-bottom:24px;">🔴</div>
-  <div class="title-big" style="font-size:56px;">실제 라이브 데모</div>
-  <div class="mt-32" style="font-size:28px; color:#8090a8;">지금 바로 확인해보겠습니다</div>
-  <div class="mt-32" style="padding: 20px 48px; background:rgba(0,255,136,0.08); border-radius:12px; border:1px solid rgba(0,255,136,0.2);">
-    <a href="https://mbc-metadesk.vercel.app/live/tv" target="_blank" style="font-size:32px; color:#00ff88; text-decoration:none; font-weight:700;">mbc-metadesk.vercel.app/live/tv →</a>
+<!-- S26: 라이브 데모 링크 -->
+<div class="slide" id="s26">
+  <div style="font-size:72px;">🔴</div>
+  <div class="title-med mt-24">실제 라이브 관제 화면</div>
+  <div class="body-big mt-24" style="font-size:24px; color:#8090a8;">아래 주소로 직접 체험할 수 있습니다</div>
+  <div class="mt-32" style="background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); border-radius:12px; padding:24px 48px; display:inline-block;">
+    <div style="font-size:28px; font-weight:700; color:#00ff88;">metadesk.mufi.kr/live</div>
   </div>
+  <div class="body-sm mt-24">* 데모 환경에서 실제 라이브 데이터를 확인할 수 있습니다</div>
 </div>
 
-<!-- TV 모드 -->
-<!-- S22 -->
-<div class="slide" id="s22">
+<!-- ─── TV 모드 (3장) ─── -->
+
+<!-- S27: 스크린샷 전체 -->
+<div class="slide" id="s27">
   <div class="title-med mb-24">TV 모드</div>
-  <div class="ss-full" style="text-align:center;">
+  <div class="ss-full">
     <img src="screenshots/04-tv-mode.png" alt="TV 모드">
   </div>
 </div>
 
-<!-- S23 -->
-<div class="slide" id="s23">
-  <div class="body-sm mb-16">TV 모드</div>
-  <div class="title-big" style="font-size:56px;">편성국 벽면 모니터에<br>바로 띄울 수 있습니다</div>
-  <div class="body-big mt-32">별도 설치 없이 URL만 열면<br>TV 화면에 최적화된 레이아웃</div>
-</div>
-
-<!-- S24 -->
-<div class="slide" id="s24">
+<!-- S28: 설명 -->
+<div class="slide" id="s28">
   <div class="ss-layout">
-    <img src="screenshots/04-tv-mode.png" alt="TV 모드" style="max-width:50%; max-height:60vh;">
+    <img src="screenshots/04-tv-mode.png" alt="TV 모드">
     <div class="ss-text">
-      <div class="body-sm mb-16">TV 모드</div>
-      <div class="title-med" style="text-align:left; font-size:40px;">풀스크린 + 사운드<br>+ PRIORITY TARGETS</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        ✅ 풀스크린 전환<br>
-        ✅ 사운드 ON/OFF<br>
-        ✅ 실시간 PRIORITY TARGETS<br>
-        ✅ 자동 새로고침
+      <div class="badge badge-green mb-16">TV MODE</div>
+      <div class="title-med" style="font-size:36px;">편성국 벽면 모니터에<br>바로 띄울 수 있습니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        <strong style="color:#00ff88;">URL 하나만 열면 됩니다.</strong><br><br>
+        설치할 것 없습니다.<br>
+        인터넷 브라우저만 있으면 됩니다.
       </div>
     </div>
   </div>
 </div>
 
-<!-- 실시간 피드 -->
-<!-- S25 -->
-<div class="slide" id="s25">
+<!-- S29: 풀스크린 + 사운드 -->
+<div class="slide" id="s29">
+  <div class="title-med mb-24">TV 모드 기능</div>
+  <div class="cards">
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🖥️</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">풀스크린</div>
+      <div class="body-med mt-16">F11 누르면<br>전체화면으로 전환</div>
+    </div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🔔</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">사운드 알림</div>
+      <div class="body-med mt-16">새 라이브 시작 시<br>소리로 알림</div>
+    </div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🎯</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">PRIORITY TARGETS</div>
+      <div class="body-med mt-16">지금 가장 화제인<br>인물/게시물 자동 표시</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 실시간 피드 (3장) ─── -->
+
+<!-- S30: 스크린샷 전체 -->
+<div class="slide" id="s30">
   <div class="title-med mb-24">실시간 피드</div>
-  <div class="ss-full" style="text-align:center;">
+  <div class="ss-full">
     <img src="screenshots/02-feed.png" alt="실시간 피드">
   </div>
 </div>
 
-<!-- S26 -->
-<div class="slide" id="s26">
-  <div class="body-sm mb-16">실시간 피드</div>
-  <div class="title-big" style="font-size:56px;">새 게시물이 올라오면<br><span class="accent">3초 이내</span>에<br>화면에 표시됩니다</div>
-</div>
-
-<!-- S27 -->
-<div class="slide" id="s27">
-  <div class="ss-layout">
-    <img src="screenshots/02-feed.png" alt="실시간 피드" style="max-width:50%; max-height:60vh;">
-    <div class="ss-text">
-      <div class="body-sm mb-16">실시간 피드</div>
-      <div class="title-med" style="text-align:left; font-size:40px;">필터 + 무한 스크롤</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        ✅ 플랫폼별 필터 (YouTube / Twitter)<br>
-        ✅ 그룹별 필터 (여당 / 야당 / 기타)<br>
-        ✅ 날짜 범위 선택<br>
-        ✅ 무한 스크롤 로딩
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 지방선거 -->
-<!-- S28 -->
-<div class="slide" id="s28">
-  <div class="title-med mb-24">지방선거 모니터링</div>
-  <div class="ss-full" style="text-align:center;">
-    <img src="screenshots/05-election.png" alt="지방선거 모니터링">
-  </div>
-</div>
-
-<!-- S29 -->
-<div class="slide" id="s29">
-  <div class="ss-layout">
-    <img src="screenshots/05-election.png" alt="지방선거" style="max-width:50%; max-height:60vh;">
-    <div class="ss-text">
-      <div class="body-sm mb-16">지방선거 모니터링</div>
-      <div class="title-med" style="text-align:left; font-size:44px;">충북 후보 현황을<br>한 화면에서 봅니다</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        <span class="badge badge-green">당선</span>
-        <span class="badge badge-yellow">경합</span>
-        <span class="badge badge-red">열세</span>
-        <span class="badge badge-gray">미정</span>
-      </div>
-      <div class="body-med mt-24" style="text-align:left;">정당·지역·후보별 SNS 활동량 비교</div>
-    </div>
-  </div>
-</div>
-
-<!-- S30 -->
-<div class="slide" id="s30">
-  <div class="body-sm mb-16">지방선거 모니터링</div>
-  <div class="title-med mb-24">지역 드릴다운</div>
-  <div class="arrow-row" style="justify-content:center;">
-    <span>충북</span>
-    <span class="arr">→</span>
-    <span class="accent">청주</span>
-    <span class="accent">충주</span>
-    <span class="accent">제천</span>
-  </div>
-  <div class="body-big mt-32">광역 → 기초 → 후보 단위까지<br>드릴다운하여 SNS 활동 분석</div>
-</div>
-
-<!-- S31 -->
+<!-- S31: 3초 이내 -->
 <div class="slide" id="s31">
-  <div class="body-sm mb-16">지방선거 모니터링</div>
-  <div class="title-med mb-24">선거 기간 활용 시나리오</div>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><span>기자가 아침에 <strong>모닝 브리핑</strong>으로 어제 이슈 확인</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>후보별 <strong>SNS 활동량</strong> 급등 감지 → 취재 방향 결정</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span><strong>라이브 관제</strong>로 후보 긴급 방송 즉시 포착</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span><strong>감성분석</strong>으로 여론 흐름 정량적 보도</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>선거 당일 <strong>TV 모드</strong>로 보도국 상황판 운영</span></div>
+  <div class="ss-layout">
+    <img src="screenshots/02-feed.png" alt="실시간 피드">
+    <div class="ss-text">
+      <div class="badge badge-green mb-16">실시간 반영</div>
+      <div class="title-med" style="font-size:36px;">게시물 올리면<br><span class="accent">3초 이내</span>에 나타납니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        정치인이 게시물을 올리면<br>
+        <strong style="color:#ff3355;">빨간색으로 3초간 반짝</strong>이며<br>
+        새 게시물임을 알려줍니다.
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- 추가 기능 -->
-<!-- S32 -->
+<!-- S32: 필터 + 무한 스크롤 -->
 <div class="slide" id="s32">
-  <div class="ss-layout">
-    <img src="screenshots/06-stats.png" alt="통계 대시보드" style="max-width:55%; max-height:65vh;">
-    <div class="ss-text">
-      <div class="title-med" style="text-align:left;">통계 대시보드</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        📊 일별/주별 게시물 추이<br>
-        📊 플랫폼별 활동 비교<br>
-        📊 정당별 반응도 비교<br>
-        📊 HOT SCORE 히스토리
-      </div>
+  <div class="title-med mb-24">피드 기능</div>
+  <div class="cards">
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🔎</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">다양한 필터</div>
+      <div class="body-med mt-16">정당별, 인물별, 플랫폼별<br>원하는 게시물만 볼 수 있습니다</div>
+    </div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">⬇️</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">무한 스크롤</div>
+      <div class="body-med mt-16">페이지 넘김 없이<br>계속 스크롤하면 됩니다</div>
     </div>
   </div>
 </div>
 
-<!-- S33 -->
+<!-- ─── 지방선거 (4장) ─── -->
+
+<!-- S33: 스크린샷 전체 -->
 <div class="slide" id="s33">
-  <div class="ss-layout">
-    <img src="screenshots/07-topics.png" alt="정당별 피드" style="max-width:55%; max-height:65vh;">
-    <div class="ss-text">
-      <div class="title-med" style="text-align:left;">정당별 피드</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        🔵 더불어민주당<br>
-        🔴 국민의힘<br>
-        🟡 기타 정당
-      </div>
-      <div class="body-med mt-24" style="text-align:left;">정당별 서브토픽 분류로<br>관심 주제만 집중 확인</div>
-    </div>
+  <div class="title-med mb-24">지방선거 대시보드</div>
+  <div class="ss-full">
+    <img src="screenshots/05-election.png" alt="지방선거">
   </div>
 </div>
 
-<!-- S34 -->
+<!-- S34: 한 화면에서 -->
 <div class="slide" id="s34">
   <div class="ss-layout">
-    <img src="screenshots/08-thumbnail.png" alt="썸네일 메이커" style="max-width:55%; max-height:65vh;">
+    <img src="screenshots/05-election.png" alt="지방선거">
     <div class="ss-text">
-      <div class="title-med" style="text-align:left;">썸네일 메이커</div>
-      <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-        🎨 YouTube 썸네일 즉시 생성<br>
-        🎨 템플릿 기반 일관된 디자인<br>
-        🎨 기자가 직접 빠르게 제작
+      <div class="badge badge-green mb-16">지방선거</div>
+      <div class="title-med" style="font-size:36px;">충북 모든 후보를<br>한 화면에서 봅니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        <span class="badge badge-green" style="font-size:16px;">현직</span>
+        <span class="badge badge-yellow" style="font-size:16px;">예비</span>
+        <span class="badge badge-gray" style="font-size:16px;">예상자</span><br><br>
+        뱃지로 구분해서<br>
+        한눈에 파악할 수 있습니다.
       </div>
     </div>
   </div>
 </div>
 
-<!-- 모닝 브리핑 -->
-<!-- S35 -->
+<!-- S35: 지역 드릴다운 -->
 <div class="slide" id="s35">
+  <div class="title-med mb-24">지역 드릴다운</div>
+  <div class="arrow-row mt-32">
+    <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:24px 36px;">
+      <div style="font-size:32px; font-weight:700;">충북 전체</div>
+    </div>
+    <div class="arr">→</div>
+    <div style="background:rgba(0,255,136,0.08); border-radius:12px; padding:24px 36px;">
+      <div style="font-size:32px; font-weight:700; color:#00ff88;">청주</div>
+    </div>
+    <div style="background:rgba(0,255,136,0.08); border-radius:12px; padding:24px 36px;">
+      <div style="font-size:32px; font-weight:700; color:#00ff88;">충주</div>
+    </div>
+    <div style="background:rgba(0,255,136,0.08); border-radius:12px; padding:24px 36px;">
+      <div style="font-size:32px; font-weight:700; color:#00ff88;">제천</div>
+    </div>
+  </div>
+  <div class="body-big mt-32">충북 전체 → 시/군 단위로 세분화해서 볼 수 있습니다</div>
+</div>
+
+<!-- S36: 선거 기간 활용 시나리오 -->
+<div class="slide" id="s36">
+  <div class="title-med mb-24">선거 기간 활용 타임라인</div>
+  <div class="election-tl">
+    <div class="etl">
+      <div class="etl-day" style="color:#00aaff;">D-30</div>
+      <div style="font-size:24px; font-weight:700;">사전 분석</div>
+      <div class="body-med mt-16" style="font-size:20px;">후보 등록 → 자동 모니터링 시작<br>SNS 활동량 기준선 확보</div>
+    </div>
+    <div class="etl">
+      <div class="etl-day" style="color:#ffaa00;">D-7</div>
+      <div style="font-size:24px; font-weight:700;">집중 관제</div>
+      <div class="body-med mt-16" style="font-size:20px;">라이브 빈도 급증 → TV 모드 상시 가동<br>여론 변화 일일 추적</div>
+    </div>
+    <div class="etl">
+      <div class="etl-day" style="color:#ff3355;">D-Day</div>
+      <div style="font-size:24px; font-weight:700;">실시간 보도</div>
+      <div class="body-med mt-16" style="font-size:20px;">전 후보 라이브 동시 관제<br>시청자 반응 실시간 비교</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 추가 기능 (3장) ─── -->
+
+<!-- S37: 통계 대시보드 -->
+<div class="slide" id="s37">
+  <div class="ss-layout">
+    <img src="screenshots/06-stats.png" alt="통계 대시보드">
+    <div class="ss-text">
+      <div class="badge badge-green mb-16">통계 대시보드</div>
+      <div class="title-med" style="font-size:36px;">숫자로 보는<br>정치 SNS 동향</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        정당별 게시물 수, 반응 추이,<br>
+        기간별 비교를 한눈에 확인.<br><br>
+        <strong style="color:#e0e6f0;">"요즘 어느 정당이 활발한가?"</strong><br>
+        데이터로 답합니다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S38: 정당별 피드 -->
+<div class="slide" id="s38">
+  <div class="ss-layout">
+    <img src="screenshots/07-topics.png" alt="정당별 피드">
+    <div class="ss-text">
+      <div class="badge badge-green mb-16">정당별 피드</div>
+      <div class="title-med" style="font-size:36px;">관심 정당만<br>모아서 봅니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        민주당, 국민의힘, 혁신당…<br>
+        정당 버튼 하나로 필터링.<br><br>
+        정당별 핵심 인물의<br>
+        최신 게시물만 모아 볼 수 있습니다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S39: 썸네일 메이커 -->
+<div class="slide" id="s39">
+  <div class="ss-layout">
+    <img src="screenshots/08-thumbnail.png" alt="썸네일 메이커">
+    <div class="ss-text">
+      <div class="badge badge-green mb-16">썸네일 메이커</div>
+      <div class="title-med" style="font-size:36px;">뉴스 썸네일을<br><span class="accent">30초</span> 만에 만듭니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        인물 이름, 정당, 제목만 입력하면<br>
+        <strong style="color:#00ff88;">5가지 디자인</strong> 중 선택 가능.<br><br>
+        → PNG 다운로드.<br>
+        디자이너 없이도 기자가 직접.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 모닝 브리핑 (3장) ─── -->
+
+<!-- S40: 스크린샷 전체 -->
+<div class="slide" id="s40">
   <div class="title-med mb-24">모닝 브리핑</div>
-  <div class="ss-full" style="text-align:center;">
+  <div class="ss-full">
     <img src="screenshots/09-briefing.png" alt="모닝 브리핑">
   </div>
 </div>
 
-<!-- S36 -->
-<div class="slide" id="s36">
-  <div class="body-sm mb-16">모닝 브리핑</div>
-  <div class="title-med mb-24">HOT SCORE 공식</div>
-  <div style="background: rgba(255,255,255,0.04); border-radius:16px; padding:40px 60px; border:1px solid rgba(255,255,255,0.08);">
-    <div style="font-size:42px; font-weight:700; letter-spacing:1px;">
-      <span class="accent">HOT SCORE</span>
+<!-- S41: HOT SCORE -->
+<div class="slide" id="s41">
+  <div class="ss-layout">
+    <img src="screenshots/09-briefing.png" alt="모닝 브리핑">
+    <div class="ss-text">
+      <div class="badge badge-green mb-16">HOT SCORE</div>
+      <div class="title-med" style="font-size:36px;">진짜 화제가 되는<br>게시물을 찾아냅니다</div>
+      <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
+        AI가 조회수, 좋아요, 댓글, 공유를<br>
+        <strong style="color:#00ff88;">종합해서 점수</strong>를 매깁니다.<br><br>
+        단순 조회수가 아니라<br>
+        진짜 화제가 되는 게시물을 찾습니다.
+      </div>
     </div>
-    <div class="body-big mt-24">조회수 + 좋아요 + 댓글 + 공유를<br>AI가 종합적으로 점수화</div>
   </div>
-  <div class="body-big mt-32">단순 조회수가 아니라<br><strong>진짜 화제가 되는 게시물</strong>을 자동으로 찾아냅니다</div>
 </div>
 
-<!-- S37 -->
-<div class="slide" id="s37">
-  <div class="body-sm mb-16">모닝 브리핑</div>
-  <div class="title-big" style="font-size:52px;">매일 아침<br>이메일/Slack으로<br>받을 수 있습니다</div>
-  <div class="mt-32"><span class="badge badge-yellow" style="font-size:24px; padding:8px 24px;">⏳ 향후 계획</span></div>
-  <div class="body-big mt-24">현재: 대시보드에서 확인<br>예정: 이메일/Slack 자동 발송</div>
+<!-- S42: 향후 이메일/Slack -->
+<div class="slide" id="s42">
+  <div style="font-size:64px;">📧</div>
+  <div class="title-med mt-24">매일 아침, 받아보세요</div>
+  <div class="body-big mt-24">향후: 이메일 또는 Slack으로<br>모닝 브리핑을 자동 전송합니다</div>
+  <div class="mt-32">
+    <span class="badge badge-yellow" style="font-size:22px;">⏳ 준비 중</span>
+  </div>
 </div>
 
 <!-- ============================================================ -->
-<!-- PART 4: 구현 현황 (S38-S40)                                   -->
+<!-- PART 5: 긴급 상황 시나리오 (S43-S46) [NEW]                      -->
 <!-- ============================================================ -->
 
-<!-- S38 -->
-<div class="slide" id="s38">
-  <div class="title-med mb-24"><span class="green">✅</span> 구현 완료</div>
+<!-- S43: 제목 -->
+<div class="slide" id="s43">
+  <div style="font-size:72px;">🚨</div>
+  <div class="title-huge mt-24" style="font-size:56px;">긴급 상황에서<br>메타데스크는</div>
+  <div class="body-big mt-16">실제 일어날 수 있는 3가지 상황</div>
+</div>
+
+<!-- S44: 시나리오 ① 돌발 라이브 -->
+<div class="slide" id="s44">
+  <div class="emergency">
+    <div class="em-title">🔴 시나리오 ① — 정치인 돌발 라이브</div>
+    <div class="em-body">
+      오후 3시, 대통령이 긴급 라이브를 시작합니다.
+    </div>
+    <div style="margin-top:24px;">
+      <div class="em-step">
+        <span class="em-label">메타데스크:</span>
+        <span style="font-size:22px; color:#00ff88;">45초 만에 감지 → 관제 화면에 자동 표시 → 알림음 울림</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">편성PD:</span>
+        <span style="font-size:22px; color:#e0e6f0;">즉시 확인 → 특보 편성 지시</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">기자:</span>
+        <span style="font-size:22px; color:#e0e6f0;">실시간 피드에서 관련 반응 모니터링</span>
+      </div>
+    </div>
+    <div style="margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06);">
+      <span style="font-size:20px; color:#ff3355;">이전: '누가 전화해줘야' 알았던 것을</span><br>
+      <span style="font-size:20px; color:#00ff88;">→ 시스템이 자동으로.</span>
+    </div>
+  </div>
+</div>
+
+<!-- S45: 시나리오 ② 여론 급변 -->
+<div class="slide" id="s45">
+  <div class="emergency">
+    <div class="em-title">📊 시나리오 ② — 여론 급변 (댓글 폭주)</div>
+    <div class="em-body">
+      특정 정치인 영상에 부정 댓글이 급증합니다.
+    </div>
+    <div style="margin-top:24px;">
+      <div class="em-step">
+        <span class="em-label">메타데스크:</span>
+        <span style="font-size:22px; color:#00ff88;">AI 감성분석이 '부정 비율 급등' 감지 → HOT SCORE 급상승</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">화면:</span>
+        <span style="font-size:22px; color:#e0e6f0;">PRIORITY TARGETS에 해당 게시물 자동 부상</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">기자:</span>
+        <span style="font-size:22px; color:#e0e6f0;">'여론이 심상치 않다'를 감이 아닌 데이터로 판단</span>
+      </div>
+    </div>
+    <div style="margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06);">
+      <span style="font-size:20px; color:#00ff88;">→ 속보 기사 근거로 활용 가능</span>
+    </div>
+  </div>
+</div>
+
+<!-- S46: 시나리오 ③ 선거일 보도 -->
+<div class="slide" id="s46">
+  <div class="emergency">
+    <div class="em-title">🗳️ 시나리오 ③ — 선거일 보도</div>
+    <div class="em-body">
+      선거 당일, 후보들이 동시에 라이브를 시작합니다.
+    </div>
+    <div style="margin-top:24px;">
+      <div class="em-step">
+        <span class="em-label">메타데스크:</span>
+        <span style="font-size:22px; color:#00ff88;">10개+ 라이브 동시 관제 → 시청자수 실시간 비교</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">TV 모드:</span>
+        <span style="font-size:22px; color:#e0e6f0;">보도국 벽면에 PRIORITY TARGETS + 실시간 피드</span>
+      </div>
+      <div class="em-step">
+        <span class="em-label">통계:</span>
+        <span style="font-size:22px; color:#e0e6f0;">후보별 반응도 비교 → 보도 판단 근거</span>
+      </div>
+    </div>
+    <div style="margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06);">
+      <span style="font-size:20px; color:#00ff88;">→ '어느 후보가 지금 뜨고 있는지' 숫자로 즉시 파악</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 6: 구현 현황 (S47-S49)                                    -->
+<!-- ============================================================ -->
+
+<!-- S47: 구현 완료 -->
+<div class="slide" id="s47">
+  <div class="title-med mb-16">구현 현황</div>
+  <div class="badge badge-green mb-24" style="font-size:24px;">✅ 구현 완료 — 14개</div>
   <div class="tags">
     <div class="tag tag-green">메인 대시보드</div>
     <div class="tag tag-green">실시간 피드</div>
     <div class="tag tag-green">라이브 관제</div>
     <div class="tag tag-green">TV 모드</div>
-    <div class="tag tag-green">지방선거</div>
-    <div class="tag tag-green">통계 대시보드</div>
-    <div class="tag tag-green">정당별 피드</div>
-    <div class="tag tag-green">썸네일 메이커</div>
-    <div class="tag tag-green">YouTube 수집</div>
-    <div class="tag tag-green">Twitter 수집</div>
-    <div class="tag tag-green">YouTube 자동 알림</div>
-    <div class="tag tag-green">AI 감성분석</div>
     <div class="tag tag-green">모닝 브리핑</div>
-    <div class="tag tag-green">자동화 7개</div>
+    <div class="tag tag-green">HOT SCORE</div>
+    <div class="tag tag-green">AI 감성분석</div>
+    <div class="tag tag-green">PRIORITY TARGETS</div>
+    <div class="tag tag-green">BREAKING TICKER</div>
+    <div class="tag tag-green">정당별 필터</div>
+    <div class="tag tag-green">지방선거 대시보드</div>
+    <div class="tag tag-green">통계 대시보드</div>
+    <div class="tag tag-green">썸네일 메이커</div>
+    <div class="tag tag-green">3중 라이브 감지</div>
   </div>
 </div>
 
-<!-- S39 -->
-<div class="slide" id="s39">
-  <div class="title-med mb-24"><span class="yellow">⏳</span> 개발 중 / 예정</div>
+<!-- S48: 준비 중 -->
+<div class="slide" id="s48">
+  <div class="badge badge-yellow mb-24" style="font-size:24px;">⏳ 준비 중 — 7개</div>
   <div class="tags">
-    <div class="tag tag-yellow">Instagram 실제 연동</div>
-    <div class="tag tag-yellow">Facebook 연동</div>
-    <div class="tag tag-yellow">TikTok 연동</div>
-    <div class="tag tag-yellow">Slack/Email 알림</div>
-    <div class="tag tag-yellow">보고서 자동생성</div>
-    <div class="tag tag-yellow">AI 분류 기능 확장</div>
-    <div class="tag tag-yellow">기자별 맞춤 알림</div>
+    <div class="tag tag-yellow">Instagram 수집</div>
+    <div class="tag tag-yellow">Facebook 수집</div>
+    <div class="tag tag-yellow">TikTok 수집</div>
+    <div class="tag tag-yellow">이메일 브리핑 전송</div>
+    <div class="tag tag-yellow">Slack 알림 연동</div>
+    <div class="tag tag-yellow">주간 자동 보고서</div>
+    <div class="tag tag-yellow">키워드 맞춤 알림</div>
   </div>
 </div>
 
-<!-- S40 -->
-<div class="slide" id="s40">
-  <div class="title-med mb-24"><span class="red">🔴</span> 보완 필요</div>
+<!-- S49: 보완 필요 -->
+<div class="slide" id="s49">
+  <div class="badge badge-red mb-24" style="font-size:24px;">🔴 보완 필요 — 3개</div>
   <div class="tags">
     <div class="tag tag-red">보안 체계 강화</div>
     <div class="tag tag-red">실시간 연결 안정화</div>
     <div class="tag tag-red">모바일 화면 지원</div>
   </div>
+  <div class="body-med mt-32" style="max-width:700px;">
+    현재 PC 브라우저에 최적화되어 있습니다.<br>
+    보안 강화 및 모바일 대응을 순차 진행할 예정입니다.
+  </div>
 </div>
 
 <!-- ============================================================ -->
-<!-- PART 5: 도입 효과 (S41-S48)                                   -->
+<!-- PART 7: 도입 효과 (S50-S57)                                    -->
 <!-- ============================================================ -->
 
-<!-- S41 -->
-<div class="slide" id="s41">
-  <div class="title-huge" style="font-size:80px;">도입 효과</div>
+<!-- S50: 제목 -->
+<div class="slide" id="s50">
+  <div style="font-size:72px;">📈</div>
+  <div class="title-huge mt-24" style="font-size:72px;">도입 효과</div>
 </div>
 
-<!-- S42 -->
-<div class="slide" id="s42">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div style="font-size:120px; font-weight:900;" class="accent">80%</div>
-  <div class="title-med mt-16">기자 모니터링 시간 절감</div>
-  <div class="body-big mt-24">5개 앱을 매일 수십 번 확인 → 대시보드 1개로 통합</div>
-</div>
-
-<!-- S43 -->
-<div class="slide" id="s43">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div class="title-med mb-24">라이브 감지 속도</div>
-  <div class="arrow-row" style="justify-content:center;">
-    <span class="red" style="font-size:64px; font-weight:900;">30분</span>
-    <span class="arr" style="font-size:80px;">→</span>
-    <span class="green" style="font-size:64px; font-weight:900;">1분</span>
+<!-- S51: 80% 시간 절감 -->
+<div class="slide" id="s51">
+  <div class="effect-num accent">80%</div>
+  <div class="title-med mt-16">모니터링 시간 절감</div>
+  <div class="effect-desc mt-24">
+    기자 1명이 5개 앱을 매일 30분씩 확인<br>
+    → 메타데스크 대시보드 <strong style="color:#00ff88;">5분</strong>
   </div>
-  <div class="body-big mt-32">30배 빠른 라이브 감지<br>→ 30배 빠른 보도 대응</div>
-</div>
-
-<!-- S44 -->
-<div class="slide" id="s44">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div class="title-med mb-24">속보 판단 기준</div>
-  <div class="arrow-row" style="justify-content:center;">
-    <span class="red" style="font-size:52px; font-weight:700;">감</span>
-    <span class="arr" style="font-size:80px;">→</span>
-    <span class="green" style="font-size:52px; font-weight:700;">SCORE 알고리즘</span>
+  <div class="effect-detail mt-16">
+    10명 기자라면 하루 4시간 이상 절약
   </div>
-  <div class="body-big mt-32">감에 의존하던 속보 판단이<br>HOT SCORE 기반 정량적 판단으로</div>
 </div>
 
-<!-- S45 -->
-<div class="slide" id="s45">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div class="title-med mb-24">여론 파악</div>
-  <div class="arrow-row" style="justify-content:center;">
-    <span class="red" style="font-size:52px; font-weight:700;">수동</span>
-    <span class="arr" style="font-size:80px;">→</span>
-    <span class="green" style="font-size:52px; font-weight:700;">AI 감성분석</span>
+<!-- S52: 30분→1분 -->
+<div class="slide" id="s52">
+  <div class="arrow-row">
+    <span class="red" style="font-size:72px;">30분</span>
+    <span class="arr">→</span>
+    <span class="green" style="font-size:72px;">1분</span>
   </div>
-  <div class="body-big mt-32">댓글 수천 개를 사람이 읽는 대신<br>AI가 자동으로 분류·요약</div>
+  <div class="title-med mt-24">라이브 감지 속도</div>
+  <div class="effect-desc mt-24">
+    30배 빠른 감지 = 30배 빠른 보도 대응
+  </div>
+  <div class="effect-detail mt-16">
+    타 방송사보다 먼저 보도할 수 있는 골든타임 확보
+  </div>
 </div>
 
-<!-- S46 -->
-<div class="slide" id="s46">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div class="title-big" style="font-size:64px;">모닝 브리핑</div>
-  <div style="font-size:96px; font-weight:900; margin-top:16px;" class="accent">100%</div>
-  <div class="title-med mt-16">자동화</div>
-  <div class="body-big mt-24">사람 개입 없이 매일 아침 자동 생성</div>
+<!-- S53: 감→SCORE -->
+<div class="slide" id="s53">
+  <div class="arrow-row">
+    <span class="red" style="font-size:56px;">감</span>
+    <span class="arr">→</span>
+    <span class="green" style="font-size:56px;">SCORE</span>
+  </div>
+  <div class="title-med mt-24">속보 판단 기준의 변화</div>
+  <div class="effect-desc mt-24">
+    "분위기가 이상하다" → "HOT SCORE 5,900 돌파"
+  </div>
+  <div class="effect-detail mt-16">
+    데이터 기반 속보 판단으로 보도 신뢰성 향상
+  </div>
 </div>
 
-<!-- S47 -->
-<div class="slide" id="s47">
-  <div class="body-sm mb-16">도입 효과</div>
+<!-- S54: 수동→AI -->
+<div class="slide" id="s54">
+  <div class="arrow-row">
+    <span class="red" style="font-size:56px;">수동</span>
+    <span class="arr">→</span>
+    <span class="green" style="font-size:56px;">AI</span>
+  </div>
+  <div class="title-med mt-24">여론 파악 방식의 변화</div>
+  <div class="effect-desc mt-24">
+    수천 개 댓글을 사람이 읽는 대신<br>
+    AI가 긍정/부정/중립으로 자동 분류
+  </div>
+  <div class="effect-detail mt-16">
+    여론의 온도를 숫자로 파악할 수 있습니다
+  </div>
+</div>
+
+<!-- S55: 100% 모닝 브리핑 자동화 -->
+<div class="slide" id="s55">
+  <div class="effect-num accent">100%</div>
+  <div class="title-med mt-16">모닝 브리핑 자동화</div>
+  <div class="effect-desc mt-24">
+    매일 아침 7시, AI가 자동으로 브리핑을 생성합니다
+  </div>
+  <div class="effect-detail mt-16">
+    인턴이 30분 걸리던 정리 작업이 완전 자동화
+  </div>
+</div>
+
+<!-- S56: 비교표 -->
+<div class="slide" id="s56">
   <div class="title-med mb-24">기존 도구 vs 메타데스크</div>
   <table class="cmp">
-    <tr><th>항목</th><th class="old">기존</th><th class="new">메타데스크</th></tr>
-    <tr><td>모니터링</td><td class="old">앱 5개 수동</td><td class="new">대시보드 1개</td></tr>
-    <tr><td>라이브 감지</td><td class="old">15~30분</td><td class="new">1분 이내</td></tr>
-    <tr><td>속보 판단</td><td class="old">감</td><td class="new">HOT SCORE</td></tr>
-    <tr><td>여론 분석</td><td class="old">수동 댓글 읽기</td><td class="new">AI 감성분석</td></tr>
-    <tr><td>일일 요약</td><td class="old">수동 작성</td><td class="new">자동 브리핑</td></tr>
-    <tr><td>선거 모니터링</td><td class="old">없음</td><td class="new">전용 대시보드</td></tr>
-    <tr><td>방송국 관제</td><td class="old">없음</td><td class="new">TV 모드</td></tr>
+    <tr>
+      <th>항목</th>
+      <th class="old">기존 방식</th>
+      <th class="new">메타데스크</th>
+    </tr>
+    <tr>
+      <td>모니터링</td>
+      <td class="old">5개 앱 수동 확인</td>
+      <td class="new">대시보드 1개</td>
+    </tr>
+    <tr>
+      <td>라이브 감지</td>
+      <td class="old">15~30분 (전화/카톡)</td>
+      <td class="new">1분 이내 (자동)</td>
+    </tr>
+    <tr>
+      <td>여론 분석</td>
+      <td class="old">기자의 감</td>
+      <td class="new">AI 감성분석 + SCORE</td>
+    </tr>
+    <tr>
+      <td>아침 브리핑</td>
+      <td class="old">인턴 30분 수동</td>
+      <td class="new">AI 자동 생성</td>
+    </tr>
+    <tr>
+      <td>속보 판단</td>
+      <td class="old">"느낌이 이상하다"</td>
+      <td class="new">"SCORE 5,900 돌파"</td>
+    </tr>
+    <tr>
+      <td>보도국 화면</td>
+      <td class="old">별도 시스템 없음</td>
+      <td class="new">TV 모드 (URL 1개)</td>
+    </tr>
   </table>
 </div>
 
-<!-- S48 -->
-<div class="slide" id="s48">
-  <div class="body-sm mb-16">도입 효과</div>
-  <div class="title-med mb-24">비용 효과</div>
-  <div class="arrow-row" style="justify-content:center; flex-wrap:wrap;">
-    <span class="red" style="font-size:44px; font-weight:700;">SaaS 월 수백만원</span>
-    <span class="arr" style="font-size:64px;">vs</span>
-    <span class="green" style="font-size:44px; font-weight:700;">자체 구축</span>
-  </div>
-  <div class="body-big mt-32">외부 SaaS 없이 MBC충북 맞춤형 구축<br>→ 지속적 비용 절감 + 커스터마이징 자유</div>
-</div>
-
-<!-- ============================================================ -->
-<!-- PART 6: 향후 계획 + 요청 (S49-S58)                            -->
-<!-- ============================================================ -->
-
-<!-- S49 -->
-<div class="slide" id="s49">
-  <div class="title-huge" style="font-size:80px;">향후 계획</div>
-</div>
-
-<!-- S50 -->
-<div class="slide" id="s50">
-  <div class="body-sm mb-16">향후 계획</div>
-  <div class="title-med mb-24"><span class="accent">2주</span> — 운영 안정화</div>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><span>실시간 연결 안정화 안정화</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>보안 체계 강화</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>모바일 화면 지원</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>시스템 안정성 모니터링</span></div>
-  </div>
-</div>
-
-<!-- S51 -->
-<div class="slide" id="s51">
-  <div class="body-sm mb-16">향후 계획</div>
-  <div class="title-med mb-24"><span class="accent">4주</span> — 외부 연동 확대</div>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot" style="background:#ffaa00;"></div><span>Instagram 실제 연동</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#ffaa00;"></div><span>Facebook 연동</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#ffaa00;"></div><span>Slack/Email 알림 발송</span></div>
-  </div>
-</div>
-
-<!-- S52 -->
-<div class="slide" id="s52">
-  <div class="body-sm mb-16">향후 계획</div>
-  <div class="title-med mb-24"><span class="accent">8주</span> — AI 고도화</div>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>AI 분류 기능 확장</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>자동 보고서 생성</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>기자별 맞춤 알림</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>TikTok 연동</span></div>
-  </div>
-</div>
-
-<!-- S53 -->
-<div class="slide" id="s53">
-  <div class="body-sm mb-16">향후 계획</div>
-  <div class="title-med mb-24"><span class="accent">장기 비전</span> — AI 뉴스룸</div>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot" style="background:#8090a8;"></div><span>AI가 보도 추천 — "이 이슈 보도할까요?"</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#8090a8;"></div><span>자동 기사 초안 생성</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#8090a8;"></div><span>전국 지역 MBC 확장</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#8090a8;"></div><span>실시간 팩트체크 보조</span></div>
-  </div>
-</div>
-
-<!-- S54 -->
-<div class="slide" id="s54">
-  <div class="title-huge" style="font-size:64px;">추가 개발<br>가능합니다</div>
-  <div class="body-big mt-32">필요한 기능이 있으시면<br>말씀해 주세요</div>
-</div>
-
-<!-- S55 -->
-<div class="slide" id="s55">
-  <div class="feat-card">
-    <div class="body-sm mb-16">요청 가능한 기능 ①</div>
-    <div class="title-med" style="text-align:left;"><span class="accent">Slack/Email 실시간 알림</span></div>
-    <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-      • 라이브 시작 시 Slack 채널에 즉시 알림<br>
-      • HOT SCORE 급등 시 이메일 알림<br>
-      • 기자별 관심 키워드 맞춤 알림<br>
-      • 모닝 브리핑 이메일 자동 발송
-    </div>
-  </div>
-</div>
-
-<!-- S56 -->
-<div class="slide" id="s56">
-  <div class="feat-card">
-    <div class="body-sm mb-16">요청 가능한 기능 ②</div>
-    <div class="title-med" style="text-align:left;"><span class="accent">Instagram/Facebook/TikTok 확장</span></div>
-    <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-      • Instagram 릴스/스토리 수집<br>
-      • Facebook 페이지 포스트 수집<br>
-      • TikTok 영상/라이브 수집<br>
-      • 전 플랫폼 통합 분석
-    </div>
-  </div>
-</div>
-
-<!-- S57 -->
+<!-- S57: 비용 효과 -->
 <div class="slide" id="s57">
-  <div class="feat-card">
-    <div class="body-sm mb-16">요청 가능한 기능 ③</div>
-    <div class="title-med" style="text-align:left;"><span class="accent">자동 보고서 + 보도 추천</span></div>
-    <div class="body-big mt-24" style="text-align:left; font-size:26px;">
-      • 주간/월간 보고서 자동 생성 (PDF)<br>
-      • AI가 보도 가치 있는 이슈 추천<br>
-      • 후보별 SNS 활동 비교 리포트<br>
-      • 여론 변화 추이 분석 보고서
+  <div class="title-med mb-24">비용 효과</div>
+  <div class="cards">
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">⏱️</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">시간 절약</div>
+      <div class="body-med mt-16">기자 10명 기준<br><strong style="color:#00ff88;">월 80시간+</strong> 절감</div>
+    </div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">🏆</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">속보 경쟁력</div>
+      <div class="body-med mt-16">라이브 감지 속도<br><strong style="color:#00ff88;">30배 향상</strong></div>
+    </div>
+    <div class="card card-lg" style="text-align:center;">
+      <div style="font-size:48px;">📊</div>
+      <div style="font-size:28px; font-weight:700; margin-top:16px;">보도 품질</div>
+      <div class="body-med mt-16">감 → 데이터 기반<br><strong style="color:#00ff88;">객관적 판단</strong></div>
     </div>
   </div>
 </div>
 
-<!-- S58 -->
+<!-- ============================================================ -->
+<!-- PART 8: 향후 계획 + 요청 (S58-S69)                             -->
+<!-- ============================================================ -->
+
+<!-- S58: 제목 -->
 <div class="slide" id="s58">
-  <div class="title-med mb-24">문의 / 요청</div>
-  <div style="background: rgba(255,255,255,0.04); border-radius:16px; padding:48px 64px; border:1px solid rgba(255,255,255,0.08); max-width:700px;">
-    <div style="font-size:32px; font-weight:700; margin-bottom:24px;">담당자</div>
-    <div style="font-size:28px; color:#8090a8; line-height:2;">
-      이름: [담당자명]<br>
-      이메일: [email@mbc.co.kr]<br>
-      전화: [000-0000-0000]
+  <div style="font-size:72px;">🗓️</div>
+  <div class="title-huge mt-24" style="font-size:72px;">향후 계획</div>
+</div>
+
+<!-- S59: 2주 -->
+<div class="slide" id="s59">
+  <div class="road-card">
+    <div class="road-badge" style="background:rgba(0,255,136,0.15); color:#00ff88;">2주 이내</div>
+    <div class="title-med" style="font-size:36px; text-align:left;">운영 안정화</div>
+    <ul style="margin-top:20px; padding-left:24px;">
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 보안 체계 강화</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 실시간 연결 안정화</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 오류 모니터링 자동화</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 사용자 피드백 반영</li>
+    </ul>
+  </div>
+</div>
+
+<!-- S60: 4주 -->
+<div class="slide" id="s60">
+  <div class="road-card">
+    <div class="road-badge" style="background:rgba(255,170,0,0.15); color:#ffaa00;">4주 이내</div>
+    <div class="title-med" style="font-size:36px; text-align:left;">외부 연동 확대</div>
+    <ul style="margin-top:20px; padding-left:24px;">
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ Slack/이메일 알림 연동</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 키워드 맞춤 알림</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 모바일 화면 대응</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ Instagram/Facebook 수집 추가</li>
+    </ul>
+  </div>
+</div>
+
+<!-- S61: 8주 -->
+<div class="slide" id="s61">
+  <div class="road-card">
+    <div class="road-badge" style="background:rgba(0,170,255,0.15); color:#00aaff;">8주 이내</div>
+    <div class="title-med" style="font-size:36px; text-align:left;">AI 고도화</div>
+    <ul style="margin-top:20px; padding-left:24px;">
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 자동 보고서 생성 (주간/월간)</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ AI 보도 가치 추천</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ TikTok 수집 추가</li>
+      <li style="font-size:24px; line-height:2; color:#b0b8c8; list-style:none;">→ 팩트체크 보조 기능</li>
+    </ul>
+  </div>
+</div>
+
+<!-- S62: 장기 비전 -->
+<div class="slide" id="s62">
+  <div class="body-sm mb-16">LONG-TERM VISION</div>
+  <div class="title-huge" style="font-size:56px; line-height:1.4;">AI 뉴스룸</div>
+  <div class="body-big mt-32" style="max-width:800px;">
+    메타데스크가 단순 모니터링을 넘어<br>
+    <strong style="color:#00ff88;">보도 의사결정을 보조하는 AI 뉴스룸</strong>으로 발전합니다.<br><br>
+    수집 → 분석 → 판단 보조 → 보도 지원<br>
+    전 과정을 하나의 시스템에서.
+  </div>
+</div>
+
+<!-- S63: 추가 개발 가능합니다 -->
+<div class="slide" id="s63">
+  <div style="font-size:72px;">🛠️</div>
+  <div class="title-huge mt-24" style="font-size:56px;">추가 개발<br>가능합니다</div>
+  <div class="body-big mt-24">요청 주시면 우선순위에 반영하겠습니다</div>
+</div>
+
+<!-- S64: 요청 ① Slack/Email 알림 -->
+<div class="slide" id="s64">
+  <div class="feat-card">
+    <div class="badge badge-yellow mb-16">요청 ①</div>
+    <div class="title-med" style="font-size:32px; text-align:left;">Slack / Email 알림</div>
+    <div class="body-med mt-24" style="font-size:22px; line-height:1.8; text-align:left;">
+      기자 개인 Slack에<br>
+      <strong style="color:#00ff88;">'한동훈 LIVE 시작'</strong> 알림 즉시 전송.<br><br>
+      키워드를 설정하면<br>
+      관심 정치인의 게시물만 알림.<br><br>
+      <span style="color:#8090a8;">예) "이재명" 키워드 등록 → 이재명 관련 게시물만 Slack 알림</span>
     </div>
   </div>
-  <div class="body-med mt-32">* 위 정보는 발표 전 수정해 주세요</div>
 </div>
 
-<!-- ============================================================ -->
-<!-- PART 7: 마무리 (S59)                                          -->
-<!-- ============================================================ -->
-
-<!-- S59 -->
-<div class="slide" id="s59">
-  <div class="title-huge" style="font-size:120px; letter-spacing: 12px;">METADESK</div>
-  <div class="body-big mt-32" style="font-size:32px; color:#b0b8c8;">기자의 눈과 귀를 확장하는 AI 시스템</div>
-  <div class="mt-48" style="padding: 20px 48px; background:rgba(0,255,136,0.08); border-radius:12px; border:1px solid rgba(0,255,136,0.2);">
-    <a href="https://mbc-metadesk.vercel.app" target="_blank" style="font-size:28px; color:#00ff88; text-decoration:none; font-weight:700;">mbc-metadesk.vercel.app →</a>
+<!-- S65: 요청 ② SNS 확장 -->
+<div class="slide" id="s65">
+  <div class="feat-card">
+    <div class="badge badge-yellow mb-16">요청 ②</div>
+    <div class="title-med" style="font-size:32px; text-align:left;">Instagram / Facebook / TikTok 확장</div>
+    <div class="body-med mt-24" style="font-size:22px; line-height:1.8; text-align:left;">
+      현재 YouTube + Twitter만 수집 중.<br><br>
+      정치인들이 <strong style="color:#00ff88;">Instagram, Facebook, TikTok</strong>에도<br>
+      점점 더 활발하게 활동하고 있습니다.<br><br>
+      <span style="color:#8090a8;">→ 전 플랫폼을 하나의 대시보드에서 통합 모니터링</span>
+    </div>
   </div>
-  <div class="mt-48 title-med" style="color:#556;">질의응답</div>
 </div>
 
+<!-- S66: 요청 ③ 자동 보고서 -->
+<div class="slide" id="s66">
+  <div class="feat-card">
+    <div class="badge badge-yellow mb-16">요청 ③</div>
+    <div class="title-med" style="font-size:32px; text-align:left;">자동 보고서 + 보도 추천</div>
+    <div class="body-med mt-24" style="font-size:22px; line-height:1.8; text-align:left;">
+      <strong style="color:#00ff88;">주간 리포트 자동 생성.</strong><br><br>
+      AI가 한 주간의 트렌드를 분석하고<br>
+      <strong style="color:#e0e6f0;">'이 이슈는 보도 가치가 높습니다'</strong> 추천.<br><br>
+      <span style="color:#8090a8;">→ 보도국장/편성PD의 의사결정 시간 단축</span>
+    </div>
+  </div>
+</div>
+
+<!-- S67: 요청 ④ 팩트체크 -->
+<div class="slide" id="s67">
+  <div class="feat-card" style="border-color:rgba(0,170,255,0.15); background:rgba(0,170,255,0.04);">
+    <div class="badge badge-gray mb-16">요청 ④ — NEW</div>
+    <div class="title-med" style="font-size:32px; text-align:left;">실시간 팩트체크 보조</div>
+    <div class="body-med mt-24" style="font-size:22px; line-height:1.8; text-align:left;">
+      정치인 발언과 <strong style="color:#00ff88;">과거 발언을 자동 비교.</strong><br><br>
+      <strong style="color:#e0e6f0;">'이전에 반대 입장이었습니다'</strong> 표시.<br><br>
+      기자가 팩트체크에 필요한 자료를<br>
+      빠르게 찾을 수 있습니다.<br><br>
+      <span style="color:#8090a8;">→ 보도의 정확성과 신뢰도 향상</span>
+    </div>
+  </div>
+</div>
+
+<!-- S68: 요청 ⑤ 지역국 확장 -->
+<div class="slide" id="s68">
+  <div class="feat-card" style="border-color:rgba(0,170,255,0.15); background:rgba(0,170,255,0.04);">
+    <div class="badge badge-gray mb-16">요청 ⑤ — NEW</div>
+    <div class="title-med" style="font-size:32px; text-align:left;">타 MBC 지역국 확장</div>
+    <div class="body-med mt-24" style="font-size:22px; line-height:1.8; text-align:left;">
+      충북 → <strong style="color:#00ff88;">전국 17개 지역 MBC</strong>로 확장 가능.<br><br>
+      각 지역 선거/정치인 맞춤 대시보드.<br><br>
+      지역별 후보, 지역 이슈에 특화된<br>
+      모니터링 시스템 구축 가능.<br><br>
+      <span style="color:#8090a8;">→ MBC 네트워크 전체의 보도 역량 강화</span>
+    </div>
+  </div>
+</div>
+
+<!-- S69: 문의/요청 -->
+<div class="slide" id="s69">
+  <div style="font-size:72px;">💬</div>
+  <div class="title-med mt-24">문의 · 요청</div>
+  <div class="body-big mt-32" style="max-width:600px;">
+    추가 기능, 개선 사항, 새로운 아이디어가 있으시면<br>
+    언제든 말씀해 주세요.
+  </div>
+  <div class="mt-32" style="background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); border-radius:12px; padding:24px 48px; display:inline-block;">
+    <div style="font-size:24px; color:#00ff88; font-weight:700;">우선순위에 반영하여 개발하겠습니다</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 9: 마무리 (S70-S71)                                      -->
+<!-- ============================================================ -->
+
+<!-- S70: 핵심 메시지 3줄 -->
+<div class="slide" id="s70">
+  <div class="title-med mb-24" style="font-size:36px; color:#8090a8;">핵심 메시지</div>
+  <div style="text-align:left; max-width:800px;">
+    <div style="font-size:36px; font-weight:700; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+      <span class="accent" style="font-size:48px; margin-right:16px;">1.</span>
+      기자의 모니터링 시간을 <span class="green">80%</span> 줄입니다.
+    </div>
+    <div style="font-size:36px; font-weight:700; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+      <span class="accent" style="font-size:48px; margin-right:16px;">2.</span>
+      라이브를 <span class="green">1분 이내</span>에 감지합니다.
+    </div>
+    <div style="font-size:36px; font-weight:700; padding:20px 0;">
+      <span class="accent" style="font-size:48px; margin-right:16px;">3.</span>
+      AI가 여론과 이슈를 <span class="green">자동 분석</span>합니다.
+    </div>
+  </div>
+</div>
+
+<!-- S71: 엔딩 -->
+<div class="slide" id="s71">
+  <div class="title-huge" style="font-size:96px; letter-spacing: 8px;">METADESK</div>
+  <div class="body-big mt-32" style="font-size:24px; color:#8090a8;">라이브 데모</div>
+  <div class="mt-16" style="background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); border-radius:12px; padding:20px 48px; display:inline-block;">
+    <div style="font-size:28px; font-weight:700; color:#00ff88;">metadesk.mufi.kr</div>
+  </div>
+  <div class="body-big mt-48" style="font-size:32px; color:#e0e6f0;">질의응답</div>
+  <div class="body-sm mt-16">감사합니다</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Navigation Script                                             -->
+<!-- ============================================================ -->
 <script>
 (function() {
   const slides = document.querySelectorAll('.slide');
-  const progress = document.getElementById('progress');
-  const slideNum = document.getElementById('slideNum');
-  let current = 0;
+  const total = slides.length;
+  let cur = 0;
 
-  function showSlide(n) {
-    if (n < 0) n = 0;
-    if (n >= slides.length) n = slides.length - 1;
-    slides[current].classList.remove('active');
-    current = n;
-    slides[current].classList.add('active');
-    progress.style.width = ((current + 1) / slides.length * 100) + '%';
-    slideNum.textContent = (current + 1) + ' / ' + slides.length;
-    window.location.hash = '#s' + (current + 1);
+  function show(n) {
+    if (n < 0 || n >= total) return;
+    slides[cur].classList.remove('active');
+    cur = n;
+    slides[cur].classList.add('active');
+    document.getElementById('progress').style.width = ((cur + 1) / total * 100) + '%';
+    document.getElementById('slideNum').textContent = (cur + 1) + ' / ' + total;
   }
 
-  // Init
-  const hash = parseInt((window.location.hash || '').replace('#s', ''));
-  showSlide(hash > 0 && hash <= slides.length ? hash - 1 : 0);
+  function next() { show(cur + 1); }
+  function prev() { show(cur - 1); }
 
   // Keyboard
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
-      e.preventDefault(); showSlide(current + 1);
-    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-      e.preventDefault(); showSlide(current - 1);
-    } else if (e.key === 'Home') {
-      e.preventDefault(); showSlide(0);
-    } else if (e.key === 'End') {
-      e.preventDefault(); showSlide(slides.length - 1);
-    }
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    if (e.key === 'Home') { e.preventDefault(); show(0); }
+    if (e.key === 'End') { e.preventDefault(); show(total - 1); }
   });
 
   // Click
   document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') return;
-    if (e.clientX > window.innerWidth / 2) {
-      showSlide(current + 1);
-    } else {
-      showSlide(current - 1);
-    }
+    if (e.clientX > window.innerWidth / 2) next(); else prev();
   });
 
-  // Touch swipe
-  let touchStartX = 0;
-  document.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; });
+  // Touch
+  let tx = 0;
+  document.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; });
   document.addEventListener('touchend', function(e) {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) showSlide(current + 1);
-      else showSlide(current - 1);
-    }
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
   });
+
+  // Init
+  show(0);
 })();
 </script>
 </body>
