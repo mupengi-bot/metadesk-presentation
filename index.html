@@ -19,6 +19,19 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
 .slide.active { display: flex; }
 
+/* 배경 스크린샷 슬라이드 */
+.slide-bg { background-size: cover; background-position: center top; background-repeat: no-repeat; }
+.slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.35); z-index: 1; }
+.slide-bg > * { position: relative; z-index: 2; }
+
+/* 글래스모피즘 패널 */
+.glass { background: rgba(10, 14, 23, 0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
+.glass-bottom { position: absolute; bottom: 40px; left: 60px; right: 60px; z-index: 2; }
+.glass-left { position: absolute; left: 40px; top: 50%; transform: translateY(-50%); max-width: 460px; z-index: 2; }
+.glass-right { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); max-width: 460px; z-index: 2; }
+.glass-top { position: absolute; top: 40px; left: 60px; z-index: 2; }
+.glass-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 700px; z-index: 2; text-align: center; }
+
 /* Typography */
 .title-huge { font-size: 96px; font-weight: 900; background: linear-gradient(135deg, #00ff88, #00aaff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1; }
 .title-big { font-size: 64px; font-weight: 900; line-height: 1.2; }
@@ -399,18 +412,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 메인 대시보드 (4장) ─── -->
 
 <!-- S18: 스크린샷 전체 -->
-<div class="slide" id="s18">
+<div class="slide slide-bg" id="s18" style="background-image:url('screenshots/01-main-dashboard.png');">
   <div class="title-med mb-24">메인 대시보드</div>
-  <div class="ss-full">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
-  </div>
+  
 </div>
 
 <!-- S19: DAILY BRIEFING -->
-<div class="slide" id="s19">
-  <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s19" style="background-image:url('screenshots/01-main-dashboard.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">DAILY BRIEFING</div>
       <div class="title-med" style="font-size:36px;">매일 아침 AI가<br>자동으로 만들어줍니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -423,10 +433,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S20: PRIORITY TARGETS -->
-<div class="slide" id="s20">
-  <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s20" style="background-image:url('screenshots/01-main-dashboard.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">PRIORITY TARGETS</div>
       <div class="title-med" style="font-size:36px;">지금 가장 화제인 정치인이<br>누구인지, 숫자로 보여줍니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -440,10 +449,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S21: BREAKING TICKER -->
-<div class="slide" id="s21">
-  <div class="ss-layout">
-    <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s21" style="background-image:url('screenshots/01-main-dashboard.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">BREAKING TICKER + 정당 필터</div>
       <div class="title-med" style="font-size:36px;">속보 자막처럼<br>흘러갑니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -459,11 +467,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 라이브 관제 (5장) ─── -->
 
 <!-- S22: 스크린샷 전체 -->
-<div class="slide" id="s22">
+<div class="slide slide-bg" id="s22" style="background-image:url('screenshots/03-live-tv.png');">
   <div class="title-med mb-24">라이브 관제</div>
-  <div class="ss-full">
-    <img src="screenshots/03-live-tv.png" alt="라이브 관제">
-  </div>
+  
 </div>
 
 <!-- S23: 동시 라이브 -->
@@ -496,10 +502,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S25: 방송 예정 + 알림 -->
-<div class="slide" id="s25">
-  <div class="ss-layout">
-    <img src="screenshots/03-live-tv.png" alt="라이브 관제">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s25" style="background-image:url('screenshots/03-live-tv.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">방송 예정 + 알림</div>
       <div class="title-med" style="font-size:36px;">곧 시작할 라이브 목록이<br>오른쪽에 뜹니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -526,18 +531,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── TV 모드 (3장) ─── -->
 
 <!-- S27: 스크린샷 전체 -->
-<div class="slide" id="s27">
+<div class="slide slide-bg" id="s27" style="background-image:url('screenshots/04-tv-mode.png');">
   <div class="title-med mb-24">TV 모드</div>
-  <div class="ss-full">
-    <img src="screenshots/04-tv-mode.png" alt="TV 모드">
-  </div>
+  
 </div>
 
 <!-- S28: 설명 -->
 <div class="slide" id="s28">
-  <div class="ss-layout">
-    <img src="screenshots/04-tv-mode.png" alt="TV 모드">
-    <div class="ss-text">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">TV MODE</div>
       <div class="title-med" style="font-size:36px;">편성국 벽면 모니터에<br>바로 띄울 수 있습니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -550,7 +552,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S29: 풀스크린 + 사운드 -->
-<div class="slide" id="s29">
+<div class="slide slide-bg" id="s29" style="background-image:url('screenshots/04-tv-mode.png');">
   <div class="title-med mb-24">TV 모드 기능</div>
   <div class="cards">
     <div class="card card-lg" style="text-align:center;">
@@ -574,18 +576,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 실시간 피드 (3장) ─── -->
 
 <!-- S30: 스크린샷 전체 -->
-<div class="slide" id="s30">
+<div class="slide slide-bg" id="s30" style="background-image:url('screenshots/02-feed.png');">
   <div class="title-med mb-24">실시간 피드</div>
-  <div class="ss-full">
-    <img src="screenshots/02-feed.png" alt="실시간 피드">
-  </div>
+  
 </div>
 
 <!-- S31: 3초 이내 -->
 <div class="slide" id="s31">
-  <div class="ss-layout">
-    <img src="screenshots/02-feed.png" alt="실시간 피드">
-    <div class="ss-text">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">실시간 반영</div>
       <div class="title-med" style="font-size:36px;">게시물 올리면<br><span class="accent">3초 이내</span>에 나타납니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -598,7 +597,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S32: 필터 + 무한 스크롤 -->
-<div class="slide" id="s32">
+<div class="slide slide-bg" id="s32" style="background-image:url('screenshots/02-feed.png');">
   <div class="title-med mb-24">피드 기능</div>
   <div class="cards">
     <div class="card card-lg" style="text-align:center;">
@@ -617,18 +616,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 지방선거 (4장) ─── -->
 
 <!-- S33: 스크린샷 전체 -->
-<div class="slide" id="s33">
+<div class="slide slide-bg" id="s33" style="background-image:url('screenshots/05-election.png');">
   <div class="title-med mb-24">지방선거 대시보드</div>
-  <div class="ss-full">
-    <img src="screenshots/05-election.png" alt="지방선거">
-  </div>
+  
 </div>
 
 <!-- S34: 한 화면에서 -->
-<div class="slide" id="s34">
-  <div class="ss-layout">
-    <img src="screenshots/05-election.png" alt="지방선거">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s34" style="background-image:url('screenshots/05-election.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">지방선거</div>
       <div class="title-med" style="font-size:36px;">충북 모든 후보를<br>한 화면에서 봅니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -688,10 +684,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 추가 기능 (3장) ─── -->
 
 <!-- S37: 통계 대시보드 -->
-<div class="slide" id="s37">
-  <div class="ss-layout">
-    <img src="screenshots/06-stats.png" alt="통계 대시보드">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s37" style="background-image:url('screenshots/06-stats.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">통계 대시보드</div>
       <div class="title-med" style="font-size:36px;">숫자로 보는<br>정치 SNS 동향</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -705,10 +700,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S38: 정당별 피드 -->
-<div class="slide" id="s38">
-  <div class="ss-layout">
-    <img src="screenshots/07-topics.png" alt="정당별 피드">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s38" style="background-image:url('screenshots/07-topics.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">정당별 피드</div>
       <div class="title-med" style="font-size:36px;">관심 정당만<br>모아서 봅니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -722,10 +716,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 </div>
 
 <!-- S39: 썸네일 메이커 -->
-<div class="slide" id="s39">
-  <div class="ss-layout">
-    <img src="screenshots/08-thumbnail.png" alt="썸네일 메이커">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s39" style="background-image:url('screenshots/08-thumbnail.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">썸네일 메이커</div>
       <div class="title-med" style="font-size:36px;">뉴스 썸네일을<br><span class="accent">30초</span> 만에 만듭니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
@@ -741,18 +734,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- ─── 모닝 브리핑 (3장) ─── -->
 
 <!-- S40: 스크린샷 전체 -->
-<div class="slide" id="s40">
+<div class="slide slide-bg" id="s40" style="background-image:url('screenshots/09-briefing.png');">
   <div class="title-med mb-24">모닝 브리핑</div>
-  <div class="ss-full">
-    <img src="screenshots/09-briefing.png" alt="모닝 브리핑">
-  </div>
+  
 </div>
 
 <!-- S41: HOT SCORE -->
-<div class="slide" id="s41">
-  <div class="ss-layout">
-    <img src="screenshots/09-briefing.png" alt="모닝 브리핑">
-    <div class="ss-text">
+<div class="slide slide-bg" id="s41" style="background-image:url('screenshots/09-briefing.png');">
+  <div class="glass glass-right">
+    <div >
       <div class="badge badge-green mb-16">HOT SCORE</div>
       <div class="title-med" style="font-size:36px;">진짜 화제가 되는<br>게시물을 찾아냅니다</div>
       <div class="body-med mt-24" style="font-size:22px; line-height:1.8;">
