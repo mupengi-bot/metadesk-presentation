@@ -215,11 +215,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <div class="slide" id="s9">
   <div class="title-med mb-24">수집 플랫폼</div>
   <div class="plat-row">
-    <div class="plat"><div class="picon">▶️</div><div class="pname">YouTube</div><div class="badge badge-green mt-16">✅ 구현</div></div>
-    <div class="plat"><div class="picon">🐦</div><div class="pname">Twitter</div><div class="badge badge-green mt-16">✅ 구현</div></div>
-    <div class="plat"><div class="picon">📸</div><div class="pname">Instagram</div><div class="badge badge-yellow mt-16">⏳ 예정</div></div>
-    <div class="plat"><div class="picon">👤</div><div class="pname">Facebook</div><div class="badge badge-yellow mt-16">⏳ 예정</div></div>
-    <div class="plat"><div class="picon">🎵</div><div class="pname">TikTok</div><div class="badge badge-yellow mt-16">⏳ 예정</div></div>
+    <div class="plat"><div class="picon">▶️</div><div class="pname">YouTube</div><div class="badge badge-green mt-16">✅ 사용 가능</div></div>
+    <div class="plat"><div class="picon">🐦</div><div class="pname">Twitter</div><div class="badge badge-green mt-16">✅ 사용 가능</div></div>
+    <div class="plat"><div class="picon">📸</div><div class="pname">Instagram</div><div class="badge badge-yellow mt-16">⏳ 준비 중</div></div>
+    <div class="plat"><div class="picon">👤</div><div class="pname">Facebook</div><div class="badge badge-yellow mt-16">⏳ 준비 중</div></div>
+    <div class="plat"><div class="picon">🎵</div><div class="pname">TikTok</div><div class="badge badge-yellow mt-16">⏳ 준비 중</div></div>
   </div>
 </div>
 
@@ -234,7 +234,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
     <tr><td>HOT SCORE 계산</td><td>30분</td><td><span class="badge badge-green">운영중</span></td></tr>
     <tr><td>AI 감성분석</td><td>실시간</td><td><span class="badge badge-green">운영중</span></td></tr>
     <tr><td>모닝 브리핑 생성</td><td>매일 07시</td><td><span class="badge badge-green">운영중</span></td></tr>
-    <tr><td>WebSub Push 수신</td><td>즉시</td><td><span class="badge badge-green">운영중</span></td></tr>
+    <tr><td>YouTube 자동 알림 수신</td><td>즉시</td><td><span class="badge badge-green">운영중</span></td></tr>
   </table>
 </div>
 
@@ -357,17 +357,17 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   <div class="cards" style="max-width:1000px;">
     <div class="card" style="text-align:center;">
       <div style="font-size:40px;">🔔</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">WebSub Push</div>
+      <div style="font-size:28px; font-weight:700; margin-top:12px;">YouTube 자동 알림</div>
       <div class="body-med mt-16">YouTube가 직접 알림<br>→ 즉시 감지</div>
     </div>
     <div class="card" style="text-align:center;">
       <div style="font-size:40px;">📡</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">RSS 폴링</div>
+      <div style="font-size:28px; font-weight:700; margin-top:12px;">피드 정기 확인</div>
       <div class="body-med mt-16">피드 주기적 확인<br>→ 백업 감지</div>
     </div>
     <div class="card" style="text-align:center;">
       <div style="font-size:40px;">🔄</div>
-      <div style="font-size:28px; font-weight:700; margin-top:12px;">1분 폴링</div>
+      <div style="font-size:28px; font-weight:700; margin-top:12px;">1분마다 확인</div>
       <div class="body-med mt-16">API 직접 조회<br>→ 최종 안전망</div>
     </div>
   </div>
@@ -577,12 +577,12 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   <div class="body-sm mb-16">모닝 브리핑</div>
   <div class="title-med mb-24">HOT SCORE 공식</div>
   <div style="background: rgba(255,255,255,0.04); border-radius:16px; padding:40px 60px; border:1px solid rgba(255,255,255,0.08);">
-    <div style="font-size:42px; font-weight:700; font-family: monospace; letter-spacing:1px;">
-      <span class="white">HOT SCORE = </span><br>
-      <span class="yellow">조회×0.3</span> + <span class="green">좋아요×2</span> + <span style="color:#00aaff;">댓글×3</span> + <span class="red">공유×4</span>
+    <div style="font-size:42px; font-weight:700; letter-spacing:1px;">
+      <span class="accent">HOT SCORE</span>
     </div>
+    <div class="body-big mt-24">조회수 + 좋아요 + 댓글 + 공유를<br>AI가 종합적으로 점수화</div>
   </div>
-  <div class="body-big mt-32">단순 조회수가 아닌, 반응 가중치 기반<br>진짜 화제성을 측정</div>
+  <div class="body-big mt-32">단순 조회수가 아니라<br><strong>진짜 화제가 되는 게시물</strong>을 자동으로 찾아냅니다</div>
 </div>
 
 <!-- S37 -->
@@ -611,7 +611,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
     <div class="tag tag-green">썸네일 메이커</div>
     <div class="tag tag-green">YouTube 수집</div>
     <div class="tag tag-green">Twitter 수집</div>
-    <div class="tag tag-green">WebSub Push</div>
+    <div class="tag tag-green">YouTube 자동 알림</div>
     <div class="tag tag-green">AI 감성분석</div>
     <div class="tag tag-green">모닝 브리핑</div>
     <div class="tag tag-green">자동화 7개</div>
@@ -627,8 +627,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
     <div class="tag tag-yellow">TikTok 연동</div>
     <div class="tag tag-yellow">Slack/Email 알림</div>
     <div class="tag tag-yellow">보고서 자동생성</div>
-    <div class="tag tag-yellow">AI 주제분류 확장</div>
-    <div class="tag tag-yellow">사용자별 키워드 알림</div>
+    <div class="tag tag-yellow">AI 분류 기능 확장</div>
+    <div class="tag tag-yellow">기자별 맞춤 알림</div>
   </div>
 </div>
 
@@ -636,9 +636,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <div class="slide" id="s40">
   <div class="title-med mb-24"><span class="red">🔴</span> 보완 필요</div>
   <div class="tags">
-    <div class="tag tag-red">보안/RLS 강화</div>
-    <div class="tag tag-red">Realtime 재연결</div>
-    <div class="tag tag-red">모바일 최적화</div>
+    <div class="tag tag-red">보안 체계 강화</div>
+    <div class="tag tag-red">실시간 연결 안정화</div>
+    <div class="tag tag-red">모바일 화면 지원</div>
   </div>
 </div>
 
@@ -746,10 +746,10 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   <div class="body-sm mb-16">향후 계획</div>
   <div class="title-med mb-24"><span class="accent">2주</span> — 운영 안정화</div>
   <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><span>Realtime 재연결 안정화</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>보안/RLS 강화</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>모바일 레이아웃 개선</span></div>
-    <div class="tl-item"><div class="tl-dot"></div><span>에러 모니터링 구축</span></div>
+    <div class="tl-item"><div class="tl-dot"></div><span>실시간 연결 안정화 안정화</span></div>
+    <div class="tl-item"><div class="tl-dot"></div><span>보안 체계 강화</span></div>
+    <div class="tl-item"><div class="tl-dot"></div><span>모바일 화면 지원</span></div>
+    <div class="tl-item"><div class="tl-dot"></div><span>시스템 안정성 모니터링</span></div>
   </div>
 </div>
 
@@ -769,9 +769,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
   <div class="body-sm mb-16">향후 계획</div>
   <div class="title-med mb-24"><span class="accent">8주</span> — AI 고도화</div>
   <div class="timeline">
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>AI 주제분류 확장</span></div>
+    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>AI 분류 기능 확장</span></div>
     <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>자동 보고서 생성</span></div>
-    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>사용자별 키워드 알림</span></div>
+    <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>기자별 맞춤 알림</span></div>
     <div class="tl-item"><div class="tl-dot" style="background:#00aaff;"></div><span>TikTok 연동</span></div>
   </div>
 </div>
