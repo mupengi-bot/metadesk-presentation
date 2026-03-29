@@ -28,7 +28,6 @@ body {
 
 .slide.active { display: flex; }
 
-/* Header bar */
 .slide-header {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -36,7 +35,6 @@ body {
   background: linear-gradient(90deg, #00ff88, #00aaff, #8855ff);
 }
 
-/* Slide counter */
 .slide-counter {
   position: absolute;
   bottom: 30px;
@@ -46,7 +44,6 @@ body {
   font-family: monospace;
 }
 
-/* Logo area */
 .logo-area {
   position: absolute;
   top: 20px;
@@ -70,7 +67,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* Title slide */
 .title-slide {
   text-align: center;
   justify-content: center;
@@ -96,7 +92,6 @@ body {
   font-family: monospace;
 }
 
-/* Content slides */
 h2 {
   font-size: 36px;
   font-weight: 700;
@@ -113,7 +108,6 @@ h2 span { color: #556; font-weight: 400; font-size: 20px; }
   margin-bottom: 10px;
 }
 
-/* Screenshot slides */
 .screenshot-container {
   flex: 1;
   display: flex;
@@ -123,21 +117,22 @@ h2 span { color: #556; font-weight: 400; font-size: 20px; }
 }
 .screenshot-container img {
   max-height: 65vh;
-  max-width: 60%;
+  max-width: 58%;
   border-radius: 12px;
   border: 1px solid #1a2035;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  object-fit: contain;
 }
 .screenshot-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 .feature-item {
   background: #111827;
   border-left: 3px solid #00ff88;
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-radius: 0 8px 8px 0;
 }
 .feature-item .label {
@@ -145,15 +140,14 @@ h2 span { color: #556; font-weight: 400; font-size: 20px; }
   color: #00aaff;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .feature-item .desc {
-  font-size: 15px;
+  font-size: 14px;
   color: #c0c8d8;
   line-height: 1.5;
 }
 
-/* Stats grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -164,11 +158,11 @@ h2 span { color: #556; font-weight: 400; font-size: 20px; }
   background: #111827;
   border: 1px solid #1a2035;
   border-radius: 12px;
-  padding: 30px;
+  padding: 28px;
   text-align: center;
 }
 .stat-card .number {
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 900;
   background: linear-gradient(135deg, #00ff88, #00aaff);
   -webkit-background-clip: text;
@@ -180,24 +174,22 @@ h2 span { color: #556; font-weight: 400; font-size: 20px; }
   margin-top: 8px;
 }
 
-/* Feature grid */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 .feature-card {
   background: #111827;
   border: 1px solid #1a2035;
   border-radius: 12px;
-  padding: 24px;
+  padding: 22px;
 }
-.feature-card .icon { font-size: 28px; margin-bottom: 10px; }
-.feature-card h3 { font-size: 18px; color: #e0e6f0; margin-bottom: 8px; }
+.feature-card .icon { font-size: 28px; margin-bottom: 8px; }
+.feature-card h3 { font-size: 17px; color: #e0e6f0; margin-bottom: 6px; }
 .feature-card p { font-size: 13px; color: #8899aa; line-height: 1.6; }
 
-/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -205,17 +197,17 @@ table {
 }
 th {
   text-align: left;
-  padding: 12px 16px;
+  padding: 10px 14px;
   background: #111827;
   color: #00aaff;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 1px;
   border-bottom: 2px solid #1a2035;
 }
 td {
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-bottom: 1px solid #111827;
-  font-size: 14px;
+  font-size: 13px;
   color: #c0c8d8;
 }
 tr:hover td { background: #0d1220; }
@@ -224,14 +216,14 @@ tr:hover td { background: #0d1220; }
   display: inline-block;
   padding: 2px 10px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
 .badge-live { background: #ff3355; color: white; }
 .badge-done { background: #00ff88; color: #0a0e17; }
 .badge-progress { background: #ffaa00; color: #0a0e17; }
+.badge-plan { background: #556; color: white; }
 
-/* Navigation */
 .nav-hint {
   position: fixed;
   bottom: 30px;
@@ -241,15 +233,75 @@ tr:hover td { background: #0d1220; }
   font-family: monospace;
 }
 
-/* Two column */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px;
   margin-top: 20px;
 }
 
-/* End slide */
+.problem-card {
+  background: #1a0a0a;
+  border: 1px solid #3a1515;
+  border-left: 4px solid #ff3355;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.problem-card h4 { color: #ff6677; font-size: 15px; margin-bottom: 6px; }
+.problem-card p { color: #aa7777; font-size: 13px; line-height: 1.5; }
+
+.solution-card {
+  background: #0a1a0a;
+  border: 1px solid #153a15;
+  border-left: 4px solid #00ff88;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.solution-card h4 { color: #66ff99; font-size: 15px; margin-bottom: 6px; }
+.solution-card p { color: #77aa77; font-size: 13px; line-height: 1.5; }
+
+.timeline {
+  display: flex;
+  gap: 0;
+  margin-top: 30px;
+}
+.timeline-item {
+  flex: 1;
+  background: #111827;
+  border: 1px solid #1a2035;
+  padding: 20px;
+  position: relative;
+}
+.timeline-item:first-child { border-radius: 12px 0 0 12px; }
+.timeline-item:last-child { border-radius: 0 12px 12px 0; }
+.timeline-item .phase {
+  font-size: 11px;
+  color: #00aaff;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.timeline-item h4 { color: #e0e6f0; font-size: 16px; margin-bottom: 8px; }
+.timeline-item ul { list-style: none; padding: 0; }
+.timeline-item li { font-size: 12px; color: #8899aa; padding: 2px 0; }
+.timeline-item li::before { content: "▸ "; color: #00ff88; }
+
+.compare-table td:first-child { font-weight: 600; color: #e0e6f0; }
+.highlight-row td { background: #0a1a0a !important; }
+
+.quote-box {
+  background: #111827;
+  border-left: 4px solid #00aaff;
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin: 16px 0;
+  font-style: italic;
+  color: #aabbcc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .end-slide {
   text-align: center;
   justify-content: center;
@@ -261,13 +313,21 @@ tr:hover td { background: #0d1220; }
   color: #00ff88;
   margin-bottom: 20px;
 }
-.end-slide .contact {
-  font-size: 18px;
-  color: #556;
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff88, #00aaff);
+  transition: width 0.3s;
+  z-index: 100;
 }
 </style>
 </head>
 <body>
+
+<div class="progress-bar" id="progressBar"></div>
 
 <!-- SLIDE 1: Title -->
 <div class="slide title-slide active" id="s1">
@@ -275,31 +335,106 @@ tr:hover td { background: #0d1220; }
   <h1>METADESK</h1>
   <div class="subtitle">정치/선거 SNS 실시간 수집·분석·관제<br>AI 대시보드</div>
   <div class="date">MBC충북 사내 보고회 · 2026.03</div>
-  <div class="slide-counter">01 / 14</div>
+  <div class="slide-counter">01 / 19</div>
 </div>
 
-<!-- SLIDE 2: Overview -->
+<!-- SLIDE 2: 기획 배경 / 문제 정의 -->
 <div class="slide" id="s2">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">BACKGROUND</div>
+  <h2>왜 메타데스크가 필요한가?</h2>
+  <div class="quote-box">"정치 SNS 모니터링은 기자의 감과 수동 확인에 의존합니다.<br>라이브 방송 시작을 놓치면, 속보 기회를 잃습니다."</div>
+  <div class="two-col">
+    <div>
+      <div class="problem-card"><h4>❌ 수동 모니터링의 한계</h4><p>기자가 YouTube/Twitter/Instagram을 개별적으로 열어 확인. 144명 × 172계정을 사람이 커버 불가능.</p></div>
+      <div class="problem-card"><h4>❌ 라이브 감지 지연</h4><p>YouTube 라이브 시작을 수동 확인 또는 동료 연락으로 파악. 평균 15~30분 지연 → 편성 대응 늦음.</p></div>
+      <div class="problem-card"><h4>❌ 여론 파악 주관적</h4><p>댓글을 기자가 직접 읽고 "분위기"를 판단. 객관적 데이터 없이 감에 의존.</p></div>
+    </div>
+    <div>
+      <div class="solution-card"><h4>✅ 자동 수집 시스템</h4><p>5개 플랫폼, 172개 계정에서 20분마다 자동 수집. 기자는 대시보드만 확인.</p></div>
+      <div class="solution-card"><h4>✅ 1분 이내 라이브 감지</h4><p>WebSub Push + RSS + 1분 폴링 3중 하이브리드. 라이브 시작 시 즉시 알림.</p></div>
+      <div class="solution-card"><h4>✅ AI 감성분석</h4><p>댓글 자동 분류(긍/부/중립). 객관적 데이터 기반 여론 파악. 풍자/아이러니도 2차 분석.</p></div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 19</div>
+</div>
+
+<!-- SLIDE 3: 기획 의도 -->
+<div class="slide" id="s3">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">VISION</div>
+  <h2>기획 의도 <span>— 3가지 핵심 가치</span></h2>
+  <div class="feature-grid" style="margin-top:30px;">
+    <div class="feature-card" style="border-top: 3px solid #00ff88;">
+      <div class="icon">⚡</div>
+      <h3>속도 — Speed to News</h3>
+      <p>정치인의 SNS 게시물이 올라오는 순간부터 기자 화면에 도달하는 시간을 <strong>분 단위에서 초 단위</strong>로 줄입니다.<br><br>라이브 시작 감지를 <strong>30분 → 1분</strong>으로. 속보 판단의 골든타임을 확보합니다.</p>
+    </div>
+    <div class="feature-card" style="border-top: 3px solid #00aaff;">
+      <div class="icon">🎯</div>
+      <h3>정확도 — Data-Driven Decision</h3>
+      <p>급상승 탐지 알고리즘이 <strong>반응 폭증 게시물을 자동 선별</strong>합니다.<br><br>AI 감성분석으로 <strong>"이 영상에 댓글 분위기가 어때?"</strong>를 숫자로 대답합니다. 감이 아닌 데이터로.</p>
+    </div>
+    <div class="feature-card" style="border-top: 3px solid #8855ff;">
+      <div class="icon">🖥️</div>
+      <h3>현장성 — Newsroom Native</h3>
+      <p>편성국 벽면 모니터에 <strong>TV 모드</strong>를 바로 띄울 수 있습니다.<br><br>방송국 현장의 작업 흐름에 맞춘 UI. 기자·PD·편성 데스크 각자의 뷰를 제공합니다.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:24px;">"메타데스크는 도구가 아니라, <strong>기자의 눈과 귀를 확장하는 시스템</strong>입니다."</div>
+  <div class="slide-counter">03 / 19</div>
+</div>
+
+<!-- SLIDE 4: Overview -->
+<div class="slide" id="s4">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">OVERVIEW</div>
-  <h2>메타데스크란?</h2>
+  <h2>시스템 현황</h2>
   <div class="stats-grid">
     <div class="stat-card"><div class="number">144</div><div class="label">모니터링 인물</div></div>
     <div class="stat-card"><div class="number">172</div><div class="label">SNS 계정</div></div>
-    <div class="stat-card"><div class="number">2,192</div><div class="label">수집 인텔</div></div>
+    <div class="stat-card"><div class="number">2,192+</div><div class="label">수집 인텔</div></div>
     <div class="stat-card"><div class="number">10+</div><div class="label">동시 라이브 관제</div></div>
   </div>
-  <div class="feature-grid" style="margin-top:30px;">
-    <div class="feature-card"><div class="icon">📡</div><h3>자동 수집</h3><p>YouTube, Twitter/X, Instagram 등 5개 플랫폼에서 20분마다 자동 수집</p></div>
-    <div class="feature-card"><div class="icon">🔴</div><h3>라이브 감지</h3><p>YouTube 라이브 시작을 1분 이내 자동 감지 + 시청자수 실시간 추적</p></div>
-    <div class="feature-card"><div class="icon">🤖</div><h3>AI 분석</h3><p>YouTube 댓글 자동 감성분석 + 게시물 급상승 자동 탐지</p></div>
+  <div class="feature-grid" style="margin-top:24px;">
+    <div class="feature-card"><div class="icon">📡</div><h3>5개 플랫폼 수집</h3><p>YouTube ✅ · Twitter/X ✅ · Instagram · Facebook · TikTok<br>20분마다 자동 수집 + WebSub 실시간 푸시</p></div>
+    <div class="feature-card"><div class="icon">🔴</div><h3>라이브 3중 감지</h3><p>① WebSub Push (즉시)<br>② RSS 피드 스캔 (폴백)<br>③ 1분 주기 상태 폴링 (확정)</p></div>
+    <div class="feature-card"><div class="icon">🤖</div><h3>AI 2단계 분석</h3><p>① Haiku: 대량 1차 분석<br>② Sonnet: 풍자/저신뢰 2차 재분석<br>③ 급상승 탐지 + SCORE 랭킹</p></div>
   </div>
-  <div class="slide-counter">02 / 14</div>
+  <div class="slide-counter">04 / 19</div>
 </div>
 
-<!-- SLIDE 3: Main Dashboard -->
-<div class="slide" id="s3">
+<!-- SLIDE 5: 대상 사용자 -->
+<div class="slide" id="s5">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">USERS</div>
+  <h2>누가 쓰는가? <span>— 보도국/편성국 업무별 활용</span></h2>
+  <div class="feature-grid" style="margin-top:30px;">
+    <div class="feature-card" style="border-top: 3px solid #ff3355;">
+      <div class="icon">📰</div>
+      <h3>취재 기자</h3>
+      <p><strong>실시간 피드 (/feed)</strong><br>담당 정치인의 SNS 게시물을 실시간 확인<br>급상승 게시물 자동 알림으로 속보 판단<br><br><strong>정당별 피드 (/topics)</strong><br>담당 정당 게시물 집중 모니터링</p>
+    </div>
+    <div class="feature-card" style="border-top: 3px solid #ffaa00;">
+      <div class="icon">🎬</div>
+      <h3>편성 PD / 데스크</h3>
+      <p><strong>라이브 관제 (/live/tv)</strong><br>YouTube 라이브 동시 관제, 편성 즉시 대응<br><br><strong>TV 모드 (/tv)</strong><br>편성국 벽면 모니터에 상시 표시<br>PRIORITY TARGETS로 핫이슈 파악</p>
+    </div>
+    <div class="feature-card" style="border-top: 3px solid #00aaff;">
+      <div class="icon">📊</div>
+      <h3>보도국장 / 관리자</h3>
+      <p><strong>모닝 브리핑 (/briefing)</strong><br>매일 아침 24시간 요약 자동 수신<br><br><strong>통계 대시보드 (/stats)</strong><br>정당별 활동량, 트렌드 추이 파악<br><br><strong>선거 모니터링 (/election)</strong><br>충북 지방선거 후보 현황 일괄 관리</p>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 19</div>
+</div>
+
+<!-- SLIDE 6: Main Dashboard -->
+<div class="slide" id="s6">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 01</div>
@@ -307,17 +442,17 @@ tr:hover td { background: #0d1220; }
   <div class="screenshot-container">
     <img src="screenshots/01-main-dashboard.png" alt="메인 대시보드">
     <div class="screenshot-info">
-      <div class="feature-item"><div class="label">DAILY BRIEFING</div><div class="desc">AI가 자동 생성한 24시간 요약 (HOT 게시물 TOP5, 정당별 활동량)</div></div>
+      <div class="feature-item"><div class="label">DAILY BRIEFING</div><div class="desc">AI가 자동 생성한 24시간 요약 — HOT 게시물 TOP5, 정당별 활동량</div></div>
       <div class="feature-item"><div class="label">PRIORITY TARGETS</div><div class="desc">반응 점수(SCORE) 기반 실시간 랭킹 — 속보 후보 자동 선별</div></div>
-      <div class="feature-item"><div class="label">FACTION ACTIVITY</div><div class="desc">정당별 활동량 비교 바 그래프</div></div>
+      <div class="feature-item"><div class="label">FACTION ACTIVITY</div><div class="desc">정당별 활동량 비교 바 그래프 (민주당/국힘/혁신당/개혁/진보)</div></div>
       <div class="feature-item"><div class="label">BREAKING TICKER</div><div class="desc">하단 실시간 뉴스 스크롤 — 방송국 관제 컨셉</div></div>
     </div>
   </div>
-  <div class="slide-counter">03 / 14</div>
+  <div class="slide-counter">06 / 19</div>
 </div>
 
-<!-- SLIDE 4: Live TV -->
-<div class="slide" id="s4">
+<!-- SLIDE 7: Live TV -->
+<div class="slide" id="s7">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 02</div>
@@ -325,17 +460,17 @@ tr:hover td { background: #0d1220; }
   <div class="screenshot-container">
     <img src="screenshots/03-live-tv.png" alt="라이브 관제">
     <div class="screenshot-info">
-      <div class="feature-item"><div class="label">LIVE GRID</div><div class="desc">진행 중 라이브 썸네일 + 시청자수 실시간 표시 (10개+ 동시 관제)</div></div>
-      <div class="feature-item"><div class="label">자동 감지</div><div class="desc">WebSub Push + RSS + 1분 폴링 3중 하이브리드 — 누락 최소화</div></div>
-      <div class="feature-item"><div class="label">방송 예정</div><div class="desc">우측 사이드바에 예정된 라이브 일정 + 시청자수 미리보기</div></div>
+      <div class="feature-item"><div class="label">LIVE GRID</div><div class="desc">진행 중 라이브 10개+ 동시 관제 — 썸네일 + 시청자수 실시간 표시</div></div>
+      <div class="feature-item"><div class="label">3중 감지</div><div class="desc">WebSub Push + RSS 스캔 + 1분 폴링 → 누락 최소화</div></div>
+      <div class="feature-item"><div class="label">방송 예정</div><div class="desc">우측 사이드바에 scheduled 라이브 일정 사전 확인</div></div>
       <div class="feature-item"><div class="label">알림 사운드</div><div class="desc">새 라이브 시작 시 알림음 — 편성국 즉시 대응 가능</div></div>
     </div>
   </div>
-  <div class="slide-counter">04 / 14</div>
+  <div class="slide-counter">07 / 19</div>
 </div>
 
-<!-- SLIDE 5: TV Mode -->
-<div class="slide" id="s5">
+<!-- SLIDE 8: TV Mode -->
+<div class="slide" id="s8">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 03</div>
@@ -343,17 +478,17 @@ tr:hover td { background: #0d1220; }
   <div class="screenshot-container">
     <img src="screenshots/04-tv-mode.png" alt="TV 모드">
     <div class="screenshot-info">
-      <div class="feature-item"><div class="label">OPS CENTER</div><div class="desc">대형 시계 + 날짜 + LIVE 카운트 — 편성국 벽면에 즉시 활용</div></div>
-      <div class="feature-item"><div class="label">PRIORITY TARGETS</div><div class="desc">실시간 급상승 게시물 TOP3 + SCORE 표시</div></div>
-      <div class="feature-item"><div class="label">INTEL FEED</div><div class="desc">최신 게시물 카드 — 프로필 사진 + 정당 + 플랫폼 표시</div></div>
-      <div class="feature-item"><div class="label">FULLSCREEN</div><div class="desc">풀스크린 토글 + 사운드 ON/OFF — 벽면 모니터 최적화</div></div>
+      <div class="feature-item"><div class="label">OPS CENTER</div><div class="desc">대형 시계 + 날짜 + LIVE 카운트 — 벽면 모니터에 최적화된 레이아웃</div></div>
+      <div class="feature-item"><div class="label">PRIORITY TARGETS</div><div class="desc">실시간 급상승 게시물 TOP3 + SCORE — 한눈에 핫이슈 파악</div></div>
+      <div class="feature-item"><div class="label">INTEL FEED</div><div class="desc">최신 게시물 카드 — 프로필 사진 + 정당 색상 + 플랫폼 표시</div></div>
+      <div class="feature-item"><div class="label">FULLSCREEN</div><div class="desc">풀스크린 토글 + 사운드 ON/OFF — 벽면 모니터 전용 운영</div></div>
     </div>
   </div>
-  <div class="slide-counter">05 / 14</div>
+  <div class="slide-counter">08 / 19</div>
 </div>
 
-<!-- SLIDE 6: Feed -->
-<div class="slide" id="s6">
+<!-- SLIDE 9: Feed -->
+<div class="slide" id="s9">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 04</div>
@@ -362,16 +497,16 @@ tr:hover td { background: #0d1220; }
     <img src="screenshots/02-feed.png" alt="실시간 피드">
     <div class="screenshot-info">
       <div class="feature-item"><div class="label">REALTIME</div><div class="desc">WebSocket 기반 실시간 갱신 — 새 게시물 즉시 반영 + 3초 하이라이트</div></div>
-      <div class="feature-item"><div class="label">FILTER</div><div class="desc">플랫폼(YouTube/Twitter/Instagram) + 그룹(기업인/정치인/언론인) + 날짜 범위</div></div>
+      <div class="feature-item"><div class="label">MULTI FILTER</div><div class="desc">플랫폼 + 그룹(기업인/정치인/언론인) + 날짜 범위 복합 필터</div></div>
       <div class="feature-item"><div class="label">PRIORITY TARGETS</div><div class="desc">반응 점수 기반 HOT 게시물 상단 고정 — 속보 판단 보조</div></div>
-      <div class="feature-item"><div class="label">속보 티커</div><div class="desc">하단 LIVE FEED 스크롤 — 놓친 게시물 빠르게 캐치</div></div>
+      <div class="feature-item"><div class="label">LIVE TICKER</div><div class="desc">하단 스크롤 — 놓친 게시물 빠르게 캐치</div></div>
     </div>
   </div>
-  <div class="slide-counter">06 / 14</div>
+  <div class="slide-counter">09 / 19</div>
 </div>
 
-<!-- SLIDE 7: Election -->
-<div class="slide" id="s7">
+<!-- SLIDE 10: Election -->
+<div class="slide" id="s10">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 05</div>
@@ -379,17 +514,17 @@ tr:hover td { background: #0d1220; }
   <div class="screenshot-container">
     <img src="screenshots/05-election.png" alt="지방선거">
     <div class="screenshot-info">
-      <div class="feature-item"><div class="label">후보 카드</div><div class="desc">현직(REGISTERED) / 등록예비 / 출마예상자(ANTICIPATED) 뱃지 구분</div></div>
-      <div class="feature-item"><div class="label">지역 필터</div><div class="desc">충청북도 → 청주시/충주시/제천시 등 시군 드릴다운</div></div>
-      <div class="feature-item"><div class="label">정당 필터</div><div class="desc">민주당/국힘/조국혁신당/개혁신당/무소속 색상 코드</div></div>
-      <div class="feature-item"><div class="label">실시간 연동</div><div class="desc">각 후보의 최신 YouTube 게시물 자동 연결</div></div>
+      <div class="feature-item"><div class="label">후보 카드</div><div class="desc">현직(REGISTERED) / 등록예비 / 출마예상자(ANTICIPATED) 뱃지 자동 구분</div></div>
+      <div class="feature-item"><div class="label">지역 드릴다운</div><div class="desc">충청북도 → 청주시/충주시/제천시/옥천군 등 시군 필터</div></div>
+      <div class="feature-item"><div class="label">정당 색상</div><div class="desc">민주당(파랑)/국힘(빨강)/혁신당/개혁/무소속 시각 구분</div></div>
+      <div class="feature-item"><div class="label">SNS 연동</div><div class="desc">각 후보의 최신 YouTube 게시물 자동 연결 — 후보 동향 한눈에</div></div>
     </div>
   </div>
-  <div class="slide-counter">07 / 14</div>
+  <div class="slide-counter">10 / 19</div>
 </div>
 
-<!-- SLIDE 8: Stats -->
-<div class="slide" id="s8">
+<!-- SLIDE 11: Stats -->
+<div class="slide" id="s11">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">SCREEN 06</div>
@@ -397,71 +532,43 @@ tr:hover td { background: #0d1220; }
   <div class="screenshot-container">
     <img src="screenshots/06-stats.png" alt="통계 대시보드">
     <div class="screenshot-info">
-      <div class="feature-item"><div class="label">핵심 지표</div><div class="desc">모니터링 대상 144명 / 소셜 계정 172개 / 총 인텔 2,192건 / 최근 24시간 40건</div></div>
-      <div class="feature-item"><div class="label">플랫폼 분포</div><div class="desc">플랫폼별 게시물 비율 — 현재 YouTube 100% 활성 수집</div></div>
-      <div class="feature-item"><div class="label">정당별 활동량</div><div class="desc">Faction Activity 바 차트 — 민주당/기타/국힘/무소속 비교</div></div>
-      <div class="feature-item"><div class="label">인텔 타임라인</div><div class="desc">일별 게시물 수 추이 그래프 — 트렌드 파악</div></div>
+      <div class="feature-item"><div class="label">핵심 KPI</div><div class="desc">모니터링 144명 / 계정 172개 / 인텔 2,192건 / 24시간 활동 40건</div></div>
+      <div class="feature-item"><div class="label">플랫폼 분포</div><div class="desc">YouTube 100% 활성 수집 — 향후 Twitter/Instagram 확대 예정</div></div>
+      <div class="feature-item"><div class="label">정당별 차트</div><div class="desc">Faction Activity — 민주당/국힘/혁신당/무소속 활동량 비교</div></div>
+      <div class="feature-item"><div class="label">인텔 타임라인</div><div class="desc">일별 게시물 수 추이 — 선거 시기 트렌드 변화 파악</div></div>
     </div>
   </div>
-  <div class="slide-counter">08 / 14</div>
+  <div class="slide-counter">11 / 19</div>
 </div>
 
-<!-- SLIDE 9: Topics -->
-<div class="slide" id="s9">
-  <div class="slide-header"></div>
-  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
-  <div class="section-label">SCREEN 07</div>
-  <h2>정당별 피드 <span>— 토픽/서브토픽 기반 분류</span></h2>
-  <div class="screenshot-container">
-    <img src="screenshots/07-topics.png" alt="정당별 피드">
-    <div class="screenshot-info">
-      <div class="feature-item"><div class="label">정당 분류</div><div class="desc">더불어민주당 / 국민의힘 / 조국혁신당 / 개혁신당 / 진보당</div></div>
-      <div class="feature-item"><div class="label">서브토픽</div><div class="desc">대통령실, 국회, 정당 공식 채널 등 세부 분류</div></div>
-      <div class="feature-item"><div class="label">프로필 연동</div><div class="desc">인물 프로필 사진 + 정당 색상 + 게시 시간 표시</div></div>
-      <div class="feature-item"><div class="label">게시물 통계</div><div class="desc">더불어민주당 33건 / 전체 1,493건 — 정당별 활동량 한눈에</div></div>
-    </div>
-  </div>
-  <div class="slide-counter">09 / 14</div>
-</div>
-
-<!-- SLIDE 10: Thumbnail Maker -->
-<div class="slide" id="s10">
-  <div class="slide-header"></div>
-  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
-  <div class="section-label">SCREEN 08</div>
-  <h2>썸네일 메이커 <span>— 기자 실무 도구</span></h2>
-  <div class="screenshot-container">
-    <img src="screenshots/08-thumbnail.png" alt="썸네일 메이커">
-    <div class="screenshot-info">
-      <div class="feature-item"><div class="label">입력 데이터</div><div class="desc">인물 이름, 정당, 플랫폼, 제목, 조회수/좋아요/댓글</div></div>
-      <div class="feature-item"><div class="label">5개 템플릿</div><div class="desc">Bold Gradient / News Flash / Split Panel / Quote Card / Stats Highlight</div></div>
-      <div class="feature-item"><div class="label">PNG 다운로드</div><div class="desc">버튼 클릭으로 즉시 다운로드 — YouTube 썸네일 바로 활용</div></div>
-      <div class="feature-item"><div class="label">실무 활용</div><div class="desc">기자가 뉴스 컷 제작 시 바로 사용 가능한 실용 도구</div></div>
-    </div>
-  </div>
-  <div class="slide-counter">10 / 14</div>
-</div>
-
-<!-- SLIDE 11: Briefing -->
-<div class="slide" id="s11">
-  <div class="slide-header"></div>
-  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
-  <div class="section-label">SCREEN 09</div>
-  <h2>모닝 브리핑 <span>— AI 자동 일일 요약</span></h2>
-  <div class="screenshot-container">
-    <img src="screenshots/09-briefing.png" alt="모닝 브리핑">
-    <div class="screenshot-info">
-      <div class="feature-item"><div class="label">자동 생성</div><div class="desc">매일 AM 7시 — 24시간 게시물 자동 집계 + 3줄 요약</div></div>
-      <div class="feature-item"><div class="label">HOT TOP5</div><div class="desc">hot_score 기반 (조회수×0.3 + 좋아요×2 + 댓글×3 + 공유×4)</div></div>
-      <div class="feature-item"><div class="label">정당/플랫폼별</div><div class="desc">정당별 활동량, 플랫폼별 분포 차트</div></div>
-      <div class="feature-item"><div class="label">날짜별 조회</div><div class="desc">이전/다음 버튼으로 과거 브리핑 열람 가능</div></div>
-    </div>
-  </div>
-  <div class="slide-counter">11 / 14</div>
-</div>
-
-<!-- SLIDE 12: Auto System -->
+<!-- SLIDE 12: Topics + Thumbnail + Briefing (3-in-1) -->
 <div class="slide" id="s12">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">SCREENS 07-09</div>
+  <h2>추가 기능 <span>— 정당별 피드 · 썸네일 메이커 · 브리핑</span></h2>
+  <div class="feature-grid">
+    <div class="feature-card" style="text-align:center;">
+      <img src="screenshots/07-topics.png" alt="정당별 피드" style="width:100%;border-radius:8px;margin-bottom:12px;border:1px solid #1a2035;">
+      <h3>정당별 피드</h3>
+      <p>민주당/국힘/혁신당/개혁/진보<br>서브토픽 계층 분류<br>프로필 사진 포함 카드</p>
+    </div>
+    <div class="feature-card" style="text-align:center;">
+      <img src="screenshots/08-thumbnail.png" alt="썸네일 메이커" style="width:100%;border-radius:8px;margin-bottom:12px;border:1px solid #1a2035;">
+      <h3>썸네일 메이커</h3>
+      <p>5개 디자인 템플릿<br>인물/정당/수치 입력<br>PNG 다운로드 즉시 활용</p>
+    </div>
+    <div class="feature-card" style="text-align:center;">
+      <img src="screenshots/09-briefing.png" alt="모닝 브리핑" style="width:100%;border-radius:8px;margin-bottom:12px;border:1px solid #1a2035;">
+      <h3>모닝 브리핑</h3>
+      <p>매일 AM 7시 자동 생성<br>HOT TOP5 + 정당별 통계<br>날짜별 조회 가능</p>
+    </div>
+  </div>
+  <div class="slide-counter">12 / 19</div>
+</div>
+
+<!-- SLIDE 13: Auto System -->
+<div class="slide" id="s13">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">AUTOMATION</div>
@@ -473,70 +580,180 @@ tr:hover td { background: #0d1220; }
     <tbody>
       <tr><td>전체 플랫폼 수집</td><td>20분</td><td>YouTube/Twitter 등 5개 플랫폼 게시물 자동 수집</td><td><span class="status-badge badge-done">운영중</span></td></tr>
       <tr><td>선거 대상 수집</td><td>10분</td><td>지방선거 후보 전용 수집 (빠른 주기)</td><td><span class="status-badge badge-done">운영중</span></td></tr>
-      <tr><td>라이브 감지</td><td>1분</td><td>YouTube 라이브 상태전이 (예정→진행→종료) + 시청자수</td><td><span class="status-badge badge-live">LIVE</span></td></tr>
+      <tr><td>라이브 감지</td><td>1분</td><td>YouTube 라이브 상태전이 + 시청자수 실시간 업데이트</td><td><span class="status-badge badge-live">LIVE</span></td></tr>
       <tr><td>WebSub 갱신</td><td>4일</td><td>YouTube Push 구독 자동 갱신 (5일 lease)</td><td><span class="status-badge badge-done">운영중</span></td></tr>
       <tr><td>댓글 수집</td><td>20분</td><td>YouTube 영상 댓글 증분 수집</td><td><span class="status-badge badge-done">운영중</span></td></tr>
       <tr><td>AI 감성분석</td><td>15분</td><td>댓글 감성분석 (Haiku 1차 → Sonnet 2차)</td><td><span class="status-badge badge-done">운영중</span></td></tr>
       <tr><td>모닝 브리핑</td><td>매일 AM 7시</td><td>24시간 HOT 게시물 자동 요약 보고서 생성</td><td><span class="status-badge badge-done">운영중</span></td></tr>
     </tbody>
   </table>
-  <div class="slide-counter">12 / 14</div>
+  <div class="slide-counter">13 / 19</div>
 </div>
 
-<!-- SLIDE 13: AI -->
-<div class="slide" id="s13">
+<!-- SLIDE 14: AI -->
+<div class="slide" id="s14">
   <div class="slide-header"></div>
   <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
   <div class="section-label">AI FEATURES</div>
   <h2>AI 활용 <span>— 데스크 의사결정 보조</span></h2>
   <div class="feature-grid">
-    <div class="feature-card"><div class="icon">💬</div><h3>댓글 감성분석</h3><p>YouTube 댓글을 긍정/부정/중립/혼합으로 자동 분류.<br>1차: Haiku (대량 처리)<br>2차: Sonnet (풍자/저신뢰 재분석)<br>10건 이상 분석 시 뱃지 표시</p></div>
-    <div class="feature-card"><div class="icon">🚀</div><h3>급상승 탐지</h3><p>게시물 반응(조회수/좋아요/댓글) 급증을 자동 감지.<br>PRIORITY TARGETS에 실시간 반영.<br>SCORE 기반 랭킹으로 속보 후보 자동 선별</p></div>
-    <div class="feature-card"><div class="icon">📋</div><h3>모닝 브리핑</h3><p>24시간 데이터 자동 집계.<br>HOT TOP5 + 정당/플랫폼별 통계.<br>hot_score = 조회×0.3 + 좋아요×2 + 댓글×3 + 공유×4</p></div>
+    <div class="feature-card"><div class="icon">💬</div><h3>댓글 감성분석</h3><p>YouTube 댓글 → 긍정/부정/중립/혼합 자동 분류<br><br><strong>1차 Haiku:</strong> 대량 처리 (비용 효율)<br><strong>2차 Sonnet:</strong> 풍자/아이러니 재분석<br><br>10건 이상 분석 시 뱃지 표시</p></div>
+    <div class="feature-card"><div class="icon">🚀</div><h3>급상승 탐지</h3><p>게시물 반응 급증을 자동 감지<br><br><strong>SCORE 공식:</strong><br>조회×0.3 + 좋아요×2 + 댓글×3 + 공유×4<br><br>PRIORITY TARGETS에 실시간 반영</p></div>
+    <div class="feature-card"><div class="icon">📋</div><h3>모닝 브리핑</h3><p>매일 AM 7시 자동 생성<br><br>• 24시간 수집량 요약 (3줄)<br>• HOT 게시물 TOP5<br>• 정당별/플랫폼별 통계<br>• 급등 게시물 하이라이트</p></div>
   </div>
-  <div style="margin-top:30px;">
-    <div class="feature-grid" style="grid-template-columns: 1fr 1fr;">
-      <div class="feature-card"><div class="icon">🎯</div><h3>향후 확장 계획</h3><p>• 주제/리스크 자동 분류 확장<br>• 다플랫폼 댓글 분석 (Twitter 포함)<br>• 보도 의사결정 추천 시스템<br>• 자동 보고서 템플릿 연결</p></div>
-      <div class="feature-card"><div class="icon">⚡</div><h3>운영 효과</h3><p>• 기자 수동 모니터링 시간 80% 절감<br>• 라이브 감지 누락 최소화<br>• 여론 동향 객관적 데이터 기반 파악<br>• 속보 판단 속도 향상</p></div>
+  <div class="slide-counter">14 / 19</div>
+</div>
+
+<!-- SLIDE 15: 도입 효과 -->
+<div class="slide" id="s15">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">IMPACT</div>
+  <h2>도입 효과 <span>— Before vs After</span></h2>
+  <table class="compare-table" style="margin-top:20px;">
+    <thead>
+      <tr><th>업무 항목</th><th>Before (수동)</th><th>After (메타데스크)</th><th>개선 효과</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row"><td>정치인 SNS 확인</td><td>기자가 5개 앱 개별 확인<br>1시간/일</td><td>대시보드 1개 화면<br>실시간 자동 갱신</td><td><strong style="color:#00ff88;">80% 시간 절감</strong></td></tr>
+      <tr><td>라이브 방송 감지</td><td>수동 확인 or 동료 연락<br>평균 15~30분 지연</td><td>WebSub + 1분 폴링<br>1분 이내 감지</td><td><strong style="color:#00ff88;">감지 속도 15배↑</strong></td></tr>
+      <tr class="highlight-row"><td>속보 후보 선별</td><td>기자 경험/감에 의존</td><td>SCORE 알고리즘 자동 랭킹<br>급상승 자동 탐지</td><td><strong style="color:#00ff88;">객관적 기준 확보</strong></td></tr>
+      <tr><td>여론 동향 파악</td><td>댓글 수동 읽기<br>주관적 판단</td><td>AI 감성분석<br>긍/부/중립 자동 분류</td><td><strong style="color:#00ff88;">데이터 기반 판단</strong></td></tr>
+      <tr class="highlight-row"><td>모닝 브리핑</td><td>기자/인턴이 수동 정리<br>30분~1시간</td><td>AI 자동 생성<br>매일 AM 7시</td><td><strong style="color:#00ff88;">100% 자동화</strong></td></tr>
+      <tr><td>선거 후보 동향</td><td>개별 채널 수동 확인</td><td>후보별 카드 + 지역/정당 필터<br>자동 수집 + 연동</td><td><strong style="color:#00ff88;">일괄 모니터링</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="slide-counter">15 / 19</div>
+</div>
+
+<!-- SLIDE 16: 경쟁력 비교 -->
+<div class="slide" id="s16">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">COMPETITIVE EDGE</div>
+  <h2>경쟁 우위 <span>— 기존 솔루션 대비</span></h2>
+  <table class="compare-table" style="margin-top:20px;">
+    <thead>
+      <tr><th>비교 항목</th><th>일반 SNS 모니터링 도구</th><th>메타데스크</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row"><td>라이브 감지</td><td>❌ 미지원 또는 수동</td><td>✅ 3중 자동 감지 (1분 이내)</td></tr>
+      <tr><td>방송국 전용 UI</td><td>❌ 범용 대시보드</td><td>✅ TV 모드 / 라이브 관제 / 편성국 최적화</td></tr>
+      <tr class="highlight-row"><td>AI 감성분석</td><td>△ 단순 키워드 매칭</td><td>✅ LLM 2단계 체인 (풍자/아이러니 인식)</td></tr>
+      <tr><td>실시간 반영</td><td>△ 폴링 기반 (분~시간)</td><td>✅ WebSocket Realtime (초 단위)</td></tr>
+      <tr class="highlight-row"><td>선거 특화</td><td>❌ 범용</td><td>✅ 후보/정당/지역 필터, 선거 TV 모드</td></tr>
+      <tr><td>썸네일 메이커</td><td>❌ 미지원</td><td>✅ 5개 템플릿 + PNG 다운로드</td></tr>
+      <tr class="highlight-row"><td>비용</td><td>월 수백만원 (SaaS)</td><td>✅ 자체 구축 — 운영비만 발생</td></tr>
+    </tbody>
+  </table>
+  <div class="slide-counter">16 / 19</div>
+</div>
+
+<!-- SLIDE 17: 기술 스택 (간략) -->
+<div class="slide" id="s17">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">TECH STACK</div>
+  <h2>기술 구성 <span>— 검증된 기술 스택</span></h2>
+  <div class="feature-grid" style="margin-top:30px;">
+    <div class="feature-card"><div class="icon">⚛️</div><h3>프론트엔드</h3><p><strong>Next.js 14</strong> — React 기반 풀스택 프레임워크<br><strong>shadcn/ui</strong> — 커스텀 UI 컴포넌트<br><strong>Recharts</strong> — 차트/시각화<br><strong>Tailwind CSS</strong> — 디자인 시스템</p></div>
+    <div class="feature-card"><div class="icon">🗄️</div><h3>백엔드/데이터</h3><p><strong>Supabase</strong> — PostgreSQL + Realtime + Auth<br><strong>pg_cron</strong> — DB 레벨 스케줄링<br><strong>13 테이블 + 38 인덱스</strong><br><strong>RPC + Views</strong> — 최적화된 쿼리</p></div>
+    <div class="feature-card"><div class="icon">🤖</div><h3>AI / 외부 연동</h3><p><strong>Claude AI</strong> — 감성분석 (Haiku + Sonnet)<br><strong>YouTube API v3</strong> — 데이터 수집<br><strong>WebSub</strong> — 실시간 Push<br><strong>Twitter API v2</strong> — X/Twitter 수집</p></div>
+  </div>
+  <div class="feature-grid" style="grid-template-columns: 1fr 1fr; margin-top:16px;">
+    <div class="feature-card"><div class="icon">☁️</div><h3>배포/인프라</h3><p><strong>Vercel</strong> — Serverless 배포 + Edge Network + Cron Jobs<br>별도 서버 관리 불필요 — 운영 비용 최소화</p></div>
+    <div class="feature-card"><div class="icon">📊</div><h3>코드 규모</h3><p><strong>128 파일 · 19,105 줄</strong> — TypeScript 100%<br>커스텀 훅 15개 · API 15개+ · 컴포넌트 40개+</p></div>
+  </div>
+  <div class="slide-counter">17 / 19</div>
+</div>
+
+<!-- SLIDE 18: Roadmap -->
+<div class="slide" id="s18">
+  <div class="slide-header"></div>
+  <div class="logo-area"><span class="badge">METADESK</span><span class="title-small">MBC SOCIAL INTELLIGENCE</span></div>
+  <div class="section-label">ROADMAP</div>
+  <h2>향후 로드맵 <span>— 2주 / 4주 / 8주 / 장기</span></h2>
+  <div class="timeline">
+    <div class="timeline-item" style="border-top: 3px solid #00ff88;">
+      <div class="phase">2주 — 안정화</div>
+      <h4>운영 기반 확보</h4>
+      <ul>
+        <li>보안/인증 강화 (RLS 재설계)</li>
+        <li>Cron 모니터링 자동화</li>
+        <li>운영 체크리스트 정착</li>
+        <li>Realtime 재연결 로직</li>
+      </ul>
+    </div>
+    <div class="timeline-item" style="border-top: 3px solid #00aaff;">
+      <div class="phase">4주 — 운영 완성</div>
+      <h4>외부 연동 확대</h4>
+      <ul>
+        <li>Slack/Email 알림 연동</li>
+        <li>운영자 상태 대시보드</li>
+        <li>Twitter/X 수집 안정화</li>
+        <li>감사/백업 체계 구축</li>
+      </ul>
+    </div>
+    <div class="timeline-item" style="border-top: 3px solid #8855ff;">
+      <div class="phase">8주 — 확장</div>
+      <h4>AI 고도화</h4>
+      <ul>
+        <li>AI 주제/리스크 분류 확장</li>
+        <li>Instagram/Facebook 실제 연동</li>
+        <li>보고서 자동 생성 템플릿</li>
+        <li>다플랫폼 품질 균등화</li>
+      </ul>
+    </div>
+    <div class="timeline-item" style="border-top: 3px solid #ff3355;">
+      <div class="phase">장기 — 비전</div>
+      <h4>AI 뉴스룸</h4>
+      <ul>
+        <li>보도 의사결정 추천 시스템</li>
+        <li>멀티 방송사 확장 가능</li>
+        <li>전국 선거 통합 관제</li>
+        <li>SaaS 모델 검토</li>
+      </ul>
     </div>
   </div>
-  <div class="slide-counter">13 / 14</div>
+  <div class="slide-counter">18 / 19</div>
 </div>
 
-<!-- SLIDE 14: End -->
-<div class="slide end-slide" id="s14">
+<!-- SLIDE 19: End -->
+<div class="slide end-slide" id="s19">
   <div class="slide-header"></div>
   <h1>METADESK</h1>
-  <div class="subtitle" style="margin-bottom:40px;">정치/선거 SNS 실시간 수집·분석·관제 AI 대시보드</div>
-  <div style="display:flex; gap:40px; margin-bottom:40px;">
-    <div class="stat-card" style="padding:20px 40px;"><div class="number" style="font-size:32px;">mbc-metadesk.vercel.app</div><div class="label">접속 주소</div></div>
+  <div class="subtitle" style="margin-bottom:30px;">기자의 눈과 귀를 확장하는<br>AI 소셜 인텔리전스 시스템</div>
+  <div style="display:flex; gap:20px; margin-bottom:30px; flex-wrap:wrap; justify-content:center;">
+    <div class="stat-card" style="padding:16px 30px;"><div class="number" style="font-size:24px;">mbc-metadesk.vercel.app</div><div class="label">라이브 데모</div></div>
   </div>
-  <div class="contact">MBC충북 × MUFI · 2026.03</div>
-  <div class="slide-counter">14 / 14</div>
+  <div style="color:#556; font-size:16px;">MBC충북 × MUFI · 2026.03</div>
+  <div style="color:#334; font-size:13px; margin-top:20px;">질의응답</div>
+  <div class="slide-counter">19 / 19</div>
 </div>
 
-<div class="nav-hint">← → 키로 이동 | 숫자키로 슬라이드 직접 이동</div>
+<div class="nav-hint">← → 키로 이동 | Space 다음 | 화면 클릭으로 이동</div>
 
 <script>
 let current = 1;
-const total = 14;
+const total = 19;
 
 function showSlide(n) {
   if (n < 1 || n > total) return;
   document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
   document.getElementById('s' + n).classList.add('active');
   current = n;
+  document.getElementById('progressBar').style.width = ((n / total) * 100) + '%';
 }
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); showSlide(current + 1); }
   if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(current - 1); }
-  if (e.key >= '1' && e.key <= '9') showSlide(parseInt(e.key));
-  if (e.key === '0') showSlide(10);
+  if (e.key === 'Home') showSlide(1);
+  if (e.key === 'End') showSlide(total);
 });
 
-// Touch/click navigation
 document.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') return;
   if (e.clientX > window.innerWidth / 2) showSlide(current + 1);
   else showSlide(current - 1);
 });
