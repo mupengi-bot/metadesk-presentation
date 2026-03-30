@@ -69,12 +69,12 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .gap-48 { gap: 48px; }
 
 /* Cards row */
-.cards { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
-.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px 32px; flex: 1; min-width: 200px; max-width: 320px; }
+.cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px 32px; flex: 1; min-width: 200px; max-width: 320px; overflow: visible; }
 .slide-bg .card { background: rgba(10, 14, 23, 0.85); border: 1px solid rgba(255,255,255,0.15); }
-.card-lg { padding: 48px 40px; min-width: 260px; max-width: 380px; }
-.card .num { font-size: 64px; font-weight: 900; line-height: 1; }
-.card .label { font-size: 22px; color: #8090a8; margin-top: 12px; }
+.card-lg { padding: 48px 40px; min-width: 260px; max-width: 400px; overflow: visible; }
+.card .num { font-size: 52px; font-weight: 900; line-height: 1; white-space: nowrap; }
+.card .label { font-size: 20px; color: #8090a8; margin-top: 12px; white-space: nowrap; }
 
 /* Screenshot slides */
 .ss-layout { display: flex; align-items: center; gap: 48px; width: 100%; max-width: 1400px; }
