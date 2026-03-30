@@ -23,6 +23,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .slide-bg { background-size: cover; background-position: center top; background-repeat: no-repeat; }
 .slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.65); z-index: 1; }
 .slide-bg > * { position: relative; z-index: 2; text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8); }
+.slide-bg .body-med { color: #c0d0e0; }
+.slide-bg .body-sm { color: #99aabb; }
+.slide-bg .body-big { color: #d0dce8; }
+.slide-bg .title-med { color: #ffffff; }
+.slide-bg .title-big { color: #ffffff; }
 
 /* 글래스모피즘 패널 */
 .glass { background: rgba(10, 14, 23, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
@@ -39,7 +44,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .body-big { font-size: 32px; font-weight: 400; line-height: 1.5; color: #b0b8c8; }
 .body-med { font-size: 24px; font-weight: 400; line-height: 1.6; color: #a0b0c8; }
 .body-sm { font-size: 20px; font-weight: 300; line-height: 1.5; color: #778899; }
-.accent { background: linear-gradient(135deg, #00ff88, #00aaff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.accent { background: linear-gradient(135deg, #00ff88, #00aaff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 2px 6px rgba(0,255,136,0.5)); }
+.slide-bg .accent { filter: drop-shadow(0 2px 8px rgba(0,255,136,0.7)) drop-shadow(0 0 20px rgba(0,170,255,0.4)); }
 .red { color: #ff3355; }
 .green { color: #00ff88; }
 .yellow { color: #ffaa00; }
@@ -60,6 +66,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 /* Cards row */
 .cards { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px 32px; flex: 1; min-width: 200px; max-width: 320px; }
+.slide-bg .card { background: rgba(10, 14, 23, 0.85); border: 1px solid rgba(255,255,255,0.15); }
 .card-lg { padding: 48px 40px; min-width: 260px; max-width: 380px; }
 .card .num { font-size: 64px; font-weight: 900; line-height: 1; }
 .card .label { font-size: 22px; color: #8090a8; margin-top: 12px; }
