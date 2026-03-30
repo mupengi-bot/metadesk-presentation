@@ -23,20 +23,16 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .slide-bg { background-size: cover; background-position: center top; background-repeat: no-repeat; }
 .slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.65); z-index: 1; }
 .slide-bg > * { position: relative; z-index: 2; text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8); }
-.slide-bg .body-med { color: #d0dce8 !important; }
-.slide-bg .body-sm { color: #b0c0d0 !important; }
-.slide-bg .body-big { color: #d8e2f0 !important; }
-.slide-bg .title-med:not(.accent) { color: #ffffff !important; }
-.slide-bg .title-big:not(.accent) { color: #ffffff !important; }
-.slide-bg .card .label { color: #c0d0e0 !important; }
-.slide-bg .card .num:not(.accent) { color: #ffffff !important; }
-.slide-bg .role .rdesc { color: #c0d0e0 !important; }
-.slide-bg .effect-detail { color: #c0d0e0 !important; }
-.slide-bg .tbl th { color: #b0c0d0 !important; }
-.slide-bg [style*="color:#8090a8"] { color: #c0d0e0 !important; }
-.slide-bg [style*="color: #8090a8"] { color: #c0d0e0 !important; }
-.slide-bg [style*="color:#556"] { color: #b0c0d0 !important; }
-.slide-bg .accent { -webkit-text-fill-color: transparent !important; background: linear-gradient(135deg, #00ff88, #00aaff) !important; -webkit-background-clip: text !important; background-clip: text !important; }
+.slide-bg .body-med { color: #d0dce8; }
+.slide-bg .body-sm { color: #b0c0d0; }
+.slide-bg .body-big { color: #d8e2f0; }
+.slide-bg .title-med { color: #fff; }
+.slide-bg .title-big { color: #fff; }
+.slide-bg .card .label { color: #c0d0e0; }
+.slide-bg .card .num { color: #fff; }
+.slide-bg .role .rdesc { color: #c0d0e0; }
+.slide-bg .effect-detail { color: #c0d0e0; }
+.slide-bg .tbl th { color: #b0c0d0; }
 
 /* 글래스모피즘 패널 */
 .glass { background: rgba(10, 14, 23, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
@@ -191,7 +187,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- S01: 타이틀 -->
 <div class="slide slide-bg" id="s1" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div class="title-huge" style="font-size:120px; letter-spacing: 12px;">METADESK</div>
-  <div class="body-big mt-32" style="font-size:28px; color:#8090a8;">정치/선거 SNS 실시간 수집·분석·관제 AI 대시보드</div>
+  <div class="body-big mt-32" style="font-size:28px; color:#c0d0e0;">정치/선거 SNS 실시간 수집·분석·관제 AI 대시보드</div>
   <div class="body-sm mt-24" style="font-size:22px;">MBC충북 사내 보고회 · 2026.03</div>
 </div>
 
@@ -416,7 +412,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
       오늘 하루 수집된 게시물 통계를 확인합니다.<br><br>
       정당별 활동량, 트렌드 변화를 <strong style="color:#00ff88;">데이터로</strong> 확인.<br>
       내일 취재 방향을 정합니다.<br><br>
-      <span style="color:#8090a8;">TV 모드는 야간에도 편성국 벽면에서 계속 돌아갑니다.</span>
+      <span style="color:#c0d0e0;">TV 모드는 야간에도 편성국 벽면에서 계속 돌아갑니다.</span>
     </div>
   </div>
 </div>
@@ -1239,7 +1235,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 
 <!-- S70: 핵심 메시지 3줄 -->
 <div class="slide slide-bg" id="s70" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80');">
-  <div class="title-med mb-24" style="font-size:36px; color:#8090a8;">핵심 메시지</div>
+  <div class="title-med mb-24" style="font-size:36px; color:#c0d0e0;">핵심 메시지</div>
   <div style="text-align:left; max-width:800px;">
     <div style="font-size:36px; font-weight:700; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06);">
       <span class="accent" style="font-size:48px; margin-right:16px;">1.</span>
@@ -1259,7 +1255,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 <!-- S71: 엔딩 -->
 <div class="slide slide-bg" id="s71" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=80');">
   <div class="title-huge" style="font-size:96px; letter-spacing: 8px;">METADESK</div>
-  <div class="body-big mt-32" style="font-size:24px; color:#8090a8;">라이브 데모</div>
+  <div class="body-big mt-32" style="font-size:24px; color:#c0d0e0;">라이브 데모</div>
   <div class="mt-16" style="background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); border-radius:12px; padding:20px 48px; display:inline-block;">
     <a href="https://mbc-metadesk.vercel.app" target="_blank" style="font-size:28px; font-weight:700; color:#00ff88; text-decoration:none;">mbc-metadesk.vercel.app</a>
   </div>
