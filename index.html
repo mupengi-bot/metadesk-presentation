@@ -23,11 +23,19 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0e17; c
 .slide-bg { background-size: cover; background-position: center top; background-repeat: no-repeat; }
 .slide-bg::before { content: ''; position: absolute; inset: 0; background: rgba(10, 14, 23, 0.65); z-index: 1; }
 .slide-bg > * { position: relative; z-index: 2; text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8); }
-.slide-bg .body-med { color: #c0d0e0; }
-.slide-bg .body-sm { color: #99aabb; }
-.slide-bg .body-big { color: #d0dce8; }
-.slide-bg .title-med { color: #ffffff; }
-.slide-bg .title-big { color: #ffffff; }
+.slide-bg .body-med { color: #d0dce8 !important; }
+.slide-bg .body-sm { color: #b0c0d0 !important; }
+.slide-bg .body-big { color: #d8e2f0 !important; }
+.slide-bg .title-med { color: #ffffff !important; }
+.slide-bg .title-big { color: #ffffff !important; }
+.slide-bg .card .label { color: #c0d0e0 !important; }
+.slide-bg .card .num { color: #ffffff !important; }
+.slide-bg .role .rdesc { color: #c0d0e0 !important; }
+.slide-bg .effect-detail { color: #c0d0e0 !important; }
+.slide-bg .tbl th { color: #b0c0d0 !important; }
+.slide-bg [style*="color:#8090a8"] { color: #c0d0e0 !important; }
+.slide-bg [style*="color: #8090a8"] { color: #c0d0e0 !important; }
+.slide-bg [style*="color:#556"] { color: #b0c0d0 !important; }
 
 /* 글래스모피즘 패널 */
 .glass { background: rgba(10, 14, 23, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; }
